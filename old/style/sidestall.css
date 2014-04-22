@@ -1,0 +1,158 @@
+<!--
+/*--------------------*/
+/*Generic body styling*/
+body
+{	background-color:#dadae3;
+	width:95%;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1920;
+}
+/*-----------------------*/
+/*Nav bar styling effects*/
+/*Have nav bar take up all horizontal space with margin space so it looks clean*/
+nav
+{	width:100%;
+	background-color:#767676;
+}
+nav #logo img
+{	height: 90px;
+}
+/*Have list take all available hor space from parent (nav)*/
+nav ul
+{	list-style:none;
+	overflow:hidden;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+/*search bar + 3 links = 4 elements, each take 1/4 of available space of parent (ul)*/
+nav ul li
+{	float: left;
+	width: 20%;
+}
+/*Search bar*/
+nav ul li form
+{	padding: 8px;
+	display: block;
+	width: 100%;
+}
+/*Nav button traditional formatting*/
+nav ul li a
+{	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	vertical-align: text-bottom;
+	font-weight: bold;
+	padding: 8px;
+	display: block;
+	width: 100%;
+}
+/*Normal nav button design formatting: color, etc (doesn't apply to search bar!)*/
+nav ul li a:link,
+nav ul li a:visited
+{	color:#FFFFFF;
+	background-color:#2cabe2;
+}
+/*Mouse over nav color change*/
+nav ul li a:hover,
+nav ul li a:active
+{	/*background-color:#6b708c;*/
+	background-color: #666699;
+}
+/*Make the search bar a little larger/normal looking*/
+nav ul li:first-child form input[type=text]
+{	resize:horizontal;
+	width:400px;
+}
+/*Round left corners of browse page to look more like buttons*/
+/*---skip to 2nd child because 1st is search and has no button to style for this---*/
+nav ul li:nth-child(2) a
+{	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+/*Round right corners of right nav button blah blah blah*/
+nav ul li:last-child a
+{	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+/*---------------------------------------------------------*/
+/*Set normal attributes for the page data article container*/
+article
+{	background-color:#dadae3;
+	width:95%;
+	margin-left: auto;
+	margin-right: auto;
+}
+/*--------------------------*/
+/*styles for the browse page*/
+#browse_page #parent_opts ul
+{	list-style: none;
+	overflow: hidden;
+}
+#browse_page #parent_opts ul li
+{	float: left;
+	margin-right: 10px;
+}
+#browse_page #platform_opts ul
+{	list-style: none;
+	overflow: hidden;
+}
+#browse_page #platform_opts ul li
+{	float: left;
+	margin-right: 10px;
+}
+#browse_page #genre_opts ul
+{	list-style: none;
+	overflow: hidden;
+}
+#browse_page #genre_opts ul li
+{	float: left;
+	margin-right: 10px;
+}
+#browse_page #game_results table
+{	width: 80%;
+	height: 100px;
+}
+#table_wrapper 
+{	position: relative;
+}
+#table_scroll
+{	height: 10%;
+	overflow: auto;
+	margin-top: 20px;
+}
+#table_wrapper table 
+{	width: 95%;
+}
+#table_wrapper table * 
+{	background-color: white;
+}
+/*-------------------------------------*/
+/* CSS for the game page specifically */
+#table_wrapper_review
+{	position: relative;
+}
+#table_scroll_review
+{	height: 20%;
+	overflow: auto;
+	margin-top: 20px;
+}
+#table_wrapper_review table
+{	width: 95%;
+}
+/*Keep regular background color for reviews*/
+/*-------------------------------------*/
+/*CSS for the sign up page specifically*/
+section #sign_up_table
+{	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	color: black;
+}
+/* Css for the game page*/
+#game_details #game_image
+{	margin-left: auto;
+	margin-right: auto;
+}
+-->

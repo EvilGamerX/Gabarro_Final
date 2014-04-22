@@ -1,0 +1,91 @@
+<!--
+body
+{	background-color:#dadae3;
+	width:95%;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1920;
+}
+/*Have nav bar take up all horizontal space with margin space so it looks clean*/
+nav
+{	width:100%;
+	background-color:#69c8f3;
+}
+/*Have list take all available hor space from parent (nav)*/
+nav ul
+{	list-style:none;
+	overflow:hidden;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+/*search bar + 3 links = 4 elements, each take 1/4 of available space of parent (ul)*/
+nav ul li
+{	float: left;
+	width: 25%;
+}
+/*Search bar*/
+nav ul li form
+{	padding: 8px;
+	display: block;
+	width: 100%;
+}
+/*Nav button traditional formatting*/
+nav ul li a
+{	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	vertical-align: text-bottom;
+	font-weight: bold;
+	padding: 8px;
+	display: block;
+	width: 100%;
+}
+/*Normal nav button design formatting: color, etc (doesn't apply to search bar!)*/
+nav ul li a:link,
+nav ul li a:visited
+{	color:#FFFFFF;
+	background-color:#2cabe2;
+}
+/*Mouse over nav color change*/
+nav ul li a:hover,
+nav ul li a:active
+{	background-color:#6b708c;
+}
+/*Make the search bar a little larger/normal looking*/
+nav ul li:first-child form input[type=text]
+{	resize:horizontal;
+	width:400px;
+}
+/*Round left corners of browse page to look more like buttons*/
+/*---skip to 2nd child because 1st is search and has no button to style for this---*/
+nav ul li:nth-child(2) a
+{	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+/*Round right corners of right nav button blah blah blah*/
+nav ul li:last-child a
+{	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+table
+{
+width:80%;
+height:100px;
+color:black;
+}
+td
+{
+color:black;
+}
+.wrapword /*http://stackoverflow.com/questions/3247358/css-how-do-i-wrap-text-with-no-whitespace-inside-a-td*/
+{
+white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+white-space: -pre-wrap;      /* Opera 4-6 */
+white-space: -o-pre-wrap;    /* Opera 7 */
+white-space: pre-wrap;       /* css-3 */
+word-wrap: break-word;       /* Internet Explorer 5.5+ */
+word-break: break-all;
+white-space: normal;
+}
+-->
