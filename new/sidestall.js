@@ -1,11 +1,21 @@
-var http = require('http');
-var url = require('url');
-var fsvar = require('fs');
+//var http = require('http');
+//var url = require('url');
+//var fsvar = require('fs');
 var MongoClient = require('mongodb').MongoClient;
-//var app = require('express')();
-//var server = require('http').createServer(app);
+var app = require('express')();
+var server = require('http').createServer(app);
 
-fsvar.readFile('./index.php', function(err, html){
+server.listen(52123);
+
+app.get('/', function(req, res) {
+  res.sendfile(__dirname + '/index.html');
+});
+
+app.get('*', function(req, res){
+  res.send(404);
+});
+
+/*fsvar.readFile('./index.html', function(err, html){
 if(!err)
 	homepage = html;
 });
@@ -28,11 +38,11 @@ http.createServer(function (request, res)
 						var collection = db.collection('forums');
 						
 						
-						/*collection.find().toArray(function(err, items) {
-							mydata = items;
-							set=1;
-							console.log(items[0]['name']);
-							});*/
+						//collection.find().toArray(function(err, items) {
+							//mydata = items;
+							//set=1;
+							//console.log(items[0]['name']);
+							//});
 						
 					}
 				});
@@ -40,5 +50,5 @@ http.createServer(function (request, res)
 			
 	  res.end();
 	  
-}).listen(52123, "localhost");
+}).listen(52123, "localhost");*/
 console.log('Server running at localhost:52123/');
