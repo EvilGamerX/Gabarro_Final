@@ -33,8 +33,6 @@
 	$counter = 0;
 		foreach($cursor as $doc)
 		{
-			//echo($doc['password']);
-			echo $doc['password'] . "<br>";
 			$counter++;
 		}
 	if($counter==1)
@@ -100,6 +98,19 @@
         <button class="btn btn-large btn-primary" type="submit">Sign in</button>
       </form><br/>
 		Don't have an account? <a href="?page=signup">Sign Up</a>
+			
+
+    <span id="signinButton">
+      <span
+       class="g-signin"
+       data-callback="signinCallback"
+       data-clientid="315155486850-n914vts3enlr0d1clc0le9npa29aukpk.apps.googleusercontent.com"
+       data-cookiepolicy="single_host_origin"
+       data-scope="profile">
+      </span>
+    </span>
+
+
     </div> 
 		<?php
 		}
@@ -111,3 +122,29 @@
 
 
 		?>
+		
+		 <script type="text/javascript"> (function() { var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = 'https://apis.google.com/js/client:plusone.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })(); </script>
+		 
+		 <script type="text/javascript">
+			
+
+    function signinCallback(authResult) {
+      if (authResult['status']['signed_in']) {
+        // Update the app to reflect a signed in user
+        // Hide the sign-in button now that the user is authorized, for example:
+        document.getElementById('signinButton').setAttribute('style', 'display: none');
+            alert("You did it!");
+            console.log("great jorb");
+      } else {
+        // Update the app to reflect a signed out user
+        // Possible error values:
+        //   "user_signed_out" - User is signed-out
+        //   "access_denied" - User denied access to your app
+        //   "immediate_failed" - Could not automatically log in the user
+            alert("You goofed :(");
+            console.log("fuckin' shit");
+        console.log('Sign-in state: ' + authResult['error']);
+      }
+    }
+
+ </script>
