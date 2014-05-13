@@ -168,8 +168,9 @@ function loginFinishedCallback(authResult) {
 * and any other email addresses that the user made public.
 */
 function loadProfile(){
-	var request = gapi.client.plus.people.get( {'userId' : 'me'} );
-	request.execute(loadProfileCallback);
+	window.location == "?page=login_google
+	//var request = gapi.client.plus.people.get( {'userId' : 'me'} );
+	//request.execute(loadProfileCallback);
 }
 
 /**
