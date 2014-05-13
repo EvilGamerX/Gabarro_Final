@@ -12,10 +12,9 @@
 </div>
 
 <script type="text/javascript">
-function loadProfile(){
-	var request = gapi.client.plus.people.get( {'userId' : 'me'} );
-	request.execute(loadProfileCallback);
-}
+
+var request = gapi.client.plus.people.get( {'userId' : 'me'} );
+request.execute(loadProfileCallback);
 
 /**
 * Callback for the asynchronous request to the people.get method. The profile
