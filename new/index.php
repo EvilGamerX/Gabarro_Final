@@ -5,7 +5,8 @@ include("functions/db_class.php");
 $db = new database();
 $db->setup("mgrinthal", "mattdamon", "localhost", "sidestall");
 //$lkid = connect();
-
+$m = new MongoClient();
+$mdb = $m->sidestall;
 ?>
 <html>
 
@@ -36,7 +37,8 @@ $db->setup("mgrinthal", "mattdamon", "localhost", "sidestall");
 				<li><a href="?page=forums">Forums</a></li>
 				<?php if (isset($_SESSION['username']))
 			{
-				echo "<li><a href=\"?page=accountsettings\">Account</a></li>";
+				$uname = $_SESSION['username'];
+				echo "<li><a href=\"?page=accountsettings\">$uname</a></li>";
 				echo "<li><a href=\"functions/logout.php\">Log Out</a></li>";
 				}
 			else
