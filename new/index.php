@@ -3,18 +3,29 @@
 session_start();
 include("functions/db_class.php");
 $db = new database();
-$db->setup("mgrinthal", "mattdamon", "localhost", "sidestall");
+$db->setup("evilgamerx", "sg06017", "localhost", "sidestall");
 //$lkid = connect();
-$m = new MongoClient();
-$mdb = $m->sidestall;
+//$m = new MongoClient();
+//$mdb = $m->sidestall;
 ?>
-<html>
+<html ng-app="plunker">
 
 <head>
-
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <meta charset="utf-8">
+   <!-- <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
+    <script src="javascript/app.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="javascript/carousel.js"></script> -->
+    
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="javascript/carousel.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -55,8 +66,30 @@ $mdb = $m->sidestall;
 			</div>
 		</div>
 	</nav>
+
+	<br>
+    <br>
+    
+    <div ng-controller="CarouselDemoCtrl">
+  <div style="height: 250px">
+    <carousel interval="myInterval">
+      <slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="{{slide.image}}" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide {{$index}}</h4>
+          <p>{{slide.text}}</p>
+        </div>
+      </slide>
+    </carousel>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button>
+    </div>
+  </div>
+</div>
 	
-	
+    
 			<?php
 			if(isset($_REQUEST['page']))
 			{
@@ -66,6 +99,9 @@ $mdb = $m->sidestall;
 			else
 				include "browse.php";
 		?>
+    
+    
+    
 </body>
 
 

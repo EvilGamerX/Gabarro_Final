@@ -6,5 +6,5 @@
  
  session_destroy();
  
- header('location: /bootstrapsidestall');
+ header('location: /project');
  ?>

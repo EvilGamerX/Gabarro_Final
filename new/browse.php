@@ -11,6 +11,8 @@
 -->
 		</ul>
 		<br/>
+        
+        
 	</section>
 	<form action="?page=browse" method="post">
 		<section id="platform_opts" class="platform_radio_section" style="display:none">
