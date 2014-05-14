@@ -1,20 +1,20 @@
 <!DOCTYPE HTML>
 <?php
 session_start();
-
+include("functions/db_class.php");
+$db = new database();
+$db->setup("mgrinthal", "mattdamon", "localhost", "sidestall");
 //$lkid = connect();
-//$m = new MongoClient();
-//$mdb = $m->sidestall;
+$m = new MongoClient();
+$mdb = $m->sidestall;
 ?>
-<html ng-app="plunker">
+<html>
 
 <head>
 
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
-    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
-    <script src="javascript/carousel.js"></script>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 
 <body>
