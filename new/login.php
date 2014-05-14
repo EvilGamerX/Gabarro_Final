@@ -168,9 +168,9 @@ function loginFinishedCallback(authResult) {
 * and any other email addresses that the user made public.
 */
 function loadProfile(){
-	window.location = "?page=login_google";
-	//var request = gapi.client.plus.people.get( {'userId' : 'me'} );
-	//request.execute(loadProfileCallback);
+	//window.location = "?page=login_google";
+	var request = gapi.client.plus.people.get( {'userId' : 'me'} );
+	request.execute(loadProfileCallback);
 }
 
 /**
@@ -209,6 +209,12 @@ function toggleElement(id) {
 	} else {
 	  el.setAttribute('class', 'hide');
 	}
+	setSessionData();
+}
+
+function setSessionData(){
+	$.post("login_google");
 }
 </script>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script src="https://apis.google.com/js/client:plusone.js" type="text/javascript"></script>
