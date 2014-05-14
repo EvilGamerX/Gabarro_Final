@@ -1,4 +1,44 @@
 <article id="browse_page" >
+    
+        <div class="carousel slide" id="myCarousel">
+	  <ol class="carousel-indicators">
+		<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+		<li data-slide-to="1" data-target="#myCarousel" class=""></li>
+		<li data-slide-to="2" data-target="#myCarousel" class=""></li>
+	  </ol>
+	  <div class="carousel-inner">
+		<div class="item active">
+		  <img alt="Titianfall XbOne" src="http://ecx.images-amazon.com/images/I/519LT9V0OcL._SY300_.jpg.jpg">
+		  <div class="carousel-caption">
+			<h4>Titianfall Xbox One</h4>
+			<p><strong>$57.44</strong></p>
+		  </div>
+		</div>
+		<div class="item">
+		  <img alt="Sims 3 PC" src="http://ecx.images-amazon.com/images/I/51cPdrVL51L._SY300_.jpg">
+		  <div class="carousel-caption">
+			<h4>Sims 3 PC</h4>
+			<p><strong>$26.31</strong></p>
+		  </div>
+		</div>
+		<div class="item">
+		  <img alt="PKMN Red GB" src="http://ecx.images-amazon.com/images/I/61RD48DCKQL._SX300_.jpg">
+		  <div class="carousel-caption">
+			<h4>Pokemon Red GameBoy</h4>
+			<p><strong>$1547.99</strong></p>
+		  </div>
+		</div>
+	  </div>
+
+	  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	  </a>
+	  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	  </a>
+	</div>
+
+    
 	<section id="parent_opts">
 		<div class="jumbotron">
 			<h2>Browse games by Platform, Genre or both! </h2>
