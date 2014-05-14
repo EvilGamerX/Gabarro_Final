@@ -39,13 +39,8 @@
 			$collection->insert($newuser);
 		
 		echo "<br><br><br><center><h1>Welcome to the site, " . $name . "</h1></center>";
-		echo "<center><h3>Feel free to <a href=\"?page=login\">log in</a>, and browse the site's features!</h3></center>";
+		echo "<center><h3>Thanks for signing in with Google.  Feel free to browse the site's features!</h3></center>";
 	}
-	//=================
-	
-	/*$userQuery = array('email'=>$email);
-	$cursor = $collection->find($userQuery);
-	$counter = 0;*/
 	
 	else if($exists == 1)
 	{
@@ -53,14 +48,16 @@
 		{
 			if($email == $doc['email'])
 			{
-			$goodlogin = 1;
-			echo $_SESSION['username']=$doc['username'];
-			echo $_SESSION['email']=$doc['email'];
-			echo $_SESSION['access']=$doc['access'];
-			echo $_SESSION['uid']=$doc['uid'];
-			echo $_SESSION['muted']=$doc['muted'];
-			
+				$goodlogin = 1;
+				echo $_SESSION['username']=$doc['username'];
+				echo $_SESSION['email']=$doc['email'];
+				echo $_SESSION['access']=$doc['access'];
+				echo $_SESSION['uid']=$doc['uid'];
+				echo $_SESSION['muted']=$doc['muted'];
+				header("location: ?page=browse");
 			}
 		}
 	}
+	
+	echo "you shouldn't be here";
 ?>
