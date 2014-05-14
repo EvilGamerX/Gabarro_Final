@@ -54,8 +54,17 @@
 			$password = hash('sha512', $pass . $random_salt);
 			//$quer = "INSERT INTO user_info (username, email, password, notif_pref, salt, access, muted) VALUES ('$uname', '$email', '$password', '$notifpref', '$random_salt', 0, 0)";
 			//$res = $db->send_sql($quer);
+			
+					$mymax = $collection->find();
+					$mymax->sort(array('uid'=>-1))->limit(1);
+					$absmax = 0;
+					foreach($mymax as $mmax)
+					{
+					$absmax = $mmax['uid'];
+					}
+					$absmax++;
 
-			$newuser = array('username'=>$uname, 'email'=>$email, 'password'=>$password, 'notif_pref'=>$notifpref, 'salt'=>$random_salt, 'access'=>0, 'muted'=>0);
+			$newuser = array('username'=>$uname, 'email'=>$email, 'password'=>$password, 'notif_pref'=>$notifpref, 'salt'=>$random_salt, 'access'=>0, 'muted'=>0, "uid"=>$absmax);
 			$collection->insert($newuser);
 			}
 		echo "<br><br><br><center><h1>Welcome to the site, " . $uname . "</h1></center>";

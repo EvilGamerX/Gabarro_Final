@@ -43,12 +43,11 @@
 			echo $doc['password'] . "<br>";
 			if($pass == $doc['password'])
 				{
-				echo "Wow you're great";
 				$goodlogin = 1;
 				$_SESSION['username']=$doc['username'];
 				$_SESSION['email']=$doc['email'];
 				$_SESSION['access']=$doc['access'];
-				$_SESSION['uid']=$doc['_id'];
+				$_SESSION['uid']=$doc['uid'];
 				$_SESSION['muted']=$doc['muted'];
 				}
 			}
