@@ -3,29 +3,18 @@
 session_start();
 include("functions/db_class.php");
 $db = new database();
-$db->setup("evilgamerx", "sg06017", "localhost", "sidestall");
+$db->setup("mgrinthal", "mattdamon", "localhost", "sidestall");
 //$lkid = connect();
-//$m = new MongoClient();
-//$mdb = $m->sidestall;
+$m = new MongoClient();
+$mdb = $m->sidestall;
 ?>
-<html ng-app="plunker">
+<html>
 
 <head>
-    <meta charset="utf-8">
-   <!-- <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
-    <script src="javascript/app.js"></script>
-    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
-    <script src="javascript/carousel.js"></script> -->
-    
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
-    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
-    <script src="javascript/carousel.js"></script>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    
 </head>
 
 <body>
@@ -66,11 +55,8 @@ $db->setup("evilgamerx", "sg06017", "localhost", "sidestall");
 			</div>
 		</div>
 	</nav>
-
-	<br>
-    <br>
 	
-    
+	
 			<?php
 			if(isset($_REQUEST['page']))
 			{
@@ -80,9 +66,6 @@ $db->setup("evilgamerx", "sg06017", "localhost", "sidestall");
 			else
 				include "browse.php";
 		?>
-    
-    
-    
 </body>
 
 
