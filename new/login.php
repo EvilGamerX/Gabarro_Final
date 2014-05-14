@@ -213,7 +213,13 @@ function toggleElement(id) {
 }
 
 function setSessionData(){
-	$.post("login_google");
+	/*$.ajax(
+	{
+		type:'POST',
+		url:'login_google',
+		data:
+	});*/
+	window.location = "/?page=login_google&name=poop";
 }
 </script>
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
