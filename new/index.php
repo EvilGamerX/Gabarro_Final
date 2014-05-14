@@ -69,7 +69,6 @@ $db->setup("evilgamerx", "sg06017", "localhost", "sidestall");
 
 	<br>
     <br>
-
 	
     
 			<?php
