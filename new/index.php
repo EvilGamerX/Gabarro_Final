@@ -55,6 +55,12 @@ $mdb = $m->sidestall;
 			</div>
 		</div>
 	</nav>
+
+
+	<br>
+    <br>
+
+
 	
 	
 			<?php
