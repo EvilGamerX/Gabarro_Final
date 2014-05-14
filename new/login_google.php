@@ -1,8 +1,8 @@
 <?php
-	if(isset($_GET['name'])
+	if(isset($_GET['name']))
 		$name = $_GET['name'];
 	echo $name."<br>";
-	if(isset($_GET['email'])
+	if(isset($_GET['email']))
 		$email = $_GET['email'];
 	echo $email."<br>";
 	
@@ -20,8 +20,7 @@
 	
 	if($exists == 0) //email not in db
 	{
-		if($counter==0)
-		{
+
 			echo "about to create a new user in db<br>";
 			$random_salt = hash('sha512', uniqid(mt_rand(1, mt_getrandmax()), true));
 			$password = hash('sha512', rand() . $random_salt);
@@ -34,12 +33,12 @@
 						$absmax = $mmax['uid'];
 					}
 					$absmax++;
-			echo "about to create $newuser<br>";
-			$newuser = array('username'=>$uname, 'email'=>$email, 'password'=>$password, 'notif_pref'=>$notifpref, 'salt'=>$random_salt, 'access'=>0, 'muted'=>0, "uid"=>$absmax);
+			echo "about to create newuser<br>";
+			$newuser = array('username'=>$name, 'email'=>$email, 'password'=>$password, 'notif_pref'=>0, 'salt'=>$random_salt, 'access'=>0, 'muted'=>0, "uid"=>$absmax);
 			echo "about to insert newuser into collection";
 			$collection->insert($newuser);
-		}
-		echo "<br><br><br><center><h1>Welcome to the site, " . $uname . "</h1></center>";
+		
+		echo "<br><br><br><center><h1>Welcome to the site, " . $name . "</h1></center>";
 		echo "<center><h3>Feel free to <a href=\"?page=login\">log in</a>, and browse the site's features!</h3></center>";
 	}
 	//=================
@@ -52,13 +51,16 @@
 	{
 		foreach($cursor as $doc)
 		{
-			echo "Wow you're great";
+			if($email == $doc['email'])
+			{
 			$goodlogin = 1;
-			$_SESSION['username']=$doc['username'];
-			$_SESSION['email']=$doc['email'];
-			$_SESSION['access']=$doc['access'];
-			$_SESSION['uid']=$doc['uid'];
-			$_SESSION['muted']=$doc['muted'];
+			echo $_SESSION['username']=$doc['username'];
+			echo $_SESSION['email']=$doc['email'];
+			echo $_SESSION['access']=$doc['access'];
+			echo $_SESSION['uid']=$doc['uid'];
+			echo $_SESSION['muted']=$doc['muted'];
+			
+			}
 		}
 	}
 ?>
