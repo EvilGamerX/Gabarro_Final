@@ -11,7 +11,7 @@ $mdb = $m->sidestall;
 <html>
 
 <head>
-
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="style/sidestall3.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -77,7 +77,7 @@ $mdb = $m->sidestall;
 			<a href="?page=contact">contact</a><br>
 			<a href="mailto:nunya.bizniss@dontemailus.com"><i class="fa fa-envelope"></i></a> &middot; 
 			<a href="https://www.facebook.com/bewchy" target="_blank"><i class="fa fa-facebook-square"></i></a> &middot; 
-			<a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter-square"></i></a>
+			<a href="https://twitter.com/ProBirdRights" target="_blank"><i class="fa fa-twitter-square"></i></a>
 		</p>
 	</div>
 </body>
