@@ -1,18 +1,14 @@
 <!DOCTYPE HTML>
 <?php
 session_start();
-include("functions/db_class.php");
-$db = new database();
-$db->setup("mgrinthal", "mattdamon", "localhost", "sidestall");
-//$lkid = connect();
-$m = new MongoClient();
-$mdb = $m->sidestall;
+
 ?>
 <html>
 
 <head>
 
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style/sidestall3.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
