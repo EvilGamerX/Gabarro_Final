@@ -214,16 +214,21 @@
 
 								<?php
 								$usrid = $_SESSION['uid'];
-								$quer = "SELECT gID FROM wishlist WHERE uID = \"$usrid\"";
-								$res = $db->send_sql($quer);
-								while($data=mysql_fetch_assoc($res))
+								//$quer = "SELECT gID FROM wishlist WHERE uID = \"$usrid\"";
+								//$res = $db->send_sql($quer);
+								$collection = $mdb->selectCollection("wishlist");
+								$cursor = $collection->find();
+								foreach($cursor as $doc)
 									{
-									$gID = $data['gID'];
-									$quer = "SELECT name, image from game_table WHERE id = \"$gID\"";
+									if($doc['uid'] == $usrid)
+									{
+									$gid = $doc['gid'];
+									$quer = "SELECT name, image from game_table WHERE id = \"$gid\"";
 									$res2 = $db->send_sql($quer);
 									$dat = mysql_fetch_assoc($res2);
 									$img = $dat['image'];
 									echo "<td><img src=\"$img\"></img></td>";
+									}
 									}
 
 								?>
