@@ -9,10 +9,10 @@ html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
-	background-color: rgba(94, 94, 94, 1);
 }
 body {
   margin: 0;
+  background: rgb(94, 94, 94);
 }
 article,
 aside,
@@ -5039,7 +5039,7 @@ a.list-group-item-danger.active:focus {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: rgba(105, 200, 243, 1);
+  background-color: rgb(105, 200, 243);
   border: 1px solid #e3e3e3;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
