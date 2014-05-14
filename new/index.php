@@ -51,23 +51,30 @@ session_start();
 			</div>
 		</div>
 	</nav>
-
-
-	<br>
-    <br>
-
-
+	<?php
+		if(isset($_REQUEST['page']))
+		{
+			include $_REQUEST['page'] . ".php";
+			$pg = $_REQUEST['page'];
+		}
+		else
+			include "browse.php";
+	?>
 	
-	
-			<?php
-			if(isset($_REQUEST['page']))
-			{
-				include $_REQUEST['page'] . ".php";
-				$pg = $_REQUEST['page'];
-				}
-			else
-				include "browse.php";
-		?>
+	<div class="footer">
+		<p class="text-center">
+			&copy; Sidestall Inc. 2013 - All rights reserved.<br>
+			<a href="?page=forums">forums</a> &middot; 
+			<a href="?page=about">about</a> &middot; 
+			<a href="?page=faq">faqs</a> &middot; 
+			<a href="?page=tos">terms of service</a> &middot; 
+			<a href="?page=privacy">privacy policy</a> &middot; 
+			<a href="?page=contact">contact</a><br>
+			<a href="mailto:nunya.bizniss@dontemailus.com"><i class="fa fa-envelope"></i></a> &middot; 
+			<a href="https://www.facebook.com/bewchy" target="_blank"><i class="fa fa-facebook-square"></i></a> &middot; 
+			<a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter-square"></i></a>
+		</p>
+	</div>
 </body>
 
 
