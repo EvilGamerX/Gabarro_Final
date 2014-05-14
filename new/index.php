@@ -1,7 +1,12 @@
 <!DOCTYPE HTML>
 <?php
 session_start();
-
+include("functions/db_class.php");
+$db = new database();
+$db->setup("mgrinthal", "mattdamon", "localhost", "sidestall");
+//$lkid = connect();
+$m = new MongoClient();
+$mdb = $m->sidestall;
 ?>
 <html>
 
