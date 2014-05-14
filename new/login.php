@@ -34,31 +34,24 @@
 				$counter++;
 			}
 		if($counter==1)
-			{
+		{
 			foreach($cursor as $doc)
 			{
-			echo $pass . "<br>";
-			$pass = hash('sha512', $pass . $doc['salt']);
-			echo $pass . "<br>";
-			echo $doc['password'] . "<br>";
-			if($pass == $doc['password'])
+				echo $pass . "<br>";
+				$pass = hash('sha512', $pass . $doc['salt']);
+				echo $pass . "<br>";
+				echo $doc['password'] . "<br>";
+				if($pass == $doc['password'])
 				{
-				$goodlogin = 1;
-				$_SESSION['username']=$doc['username'];
-				$_SESSION['email']=$doc['email'];
-				$_SESSION['access']=$doc['access'];
-				$_SESSION['uid']=$doc['uid'];
-				$_SESSION['muted']=$doc['muted'];
+					$goodlogin = 1;
+					$_SESSION['username']=$doc['username'];
+					$_SESSION['email']=$doc['email'];
+					$_SESSION['access']=$doc['access'];
+					$_SESSION['uid']=$doc['uid'];
+					$_SESSION['muted']=$doc['muted'];
 				}
 			}
-			}
-		/*if(!$cursor)
-			echo "Fuck you.";
-		else
-			{
-			foreach($cursor as $doc)
-				echo(var_dump($doc));
-			}*/
+		}
 
 	}
 	
@@ -69,42 +62,59 @@
 	<div class="well">
 			<h2>Welcome to Side Stall!</h2>
 	</div>
-		<form method="post" action="?page=login&log=true">
-		<!--<div class="input-group">
-			<span class="input-group-addon">Username</span>
-			<input type="text" name="username" class="form-control">
+	
+	<div class="carousel slide" id="myCarousel">
+	  <ol class="carousel-indicators">
+		<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+		<li data-slide-to="1" data-target="#myCarousel" class=""></li>
+		<li data-slide-to="2" data-target="#myCarousel" class=""></li>
+	  </ol>
+	  <div class="carousel-inner">
+		<div class="item active">
+		  <img alt="" src="http://lorempixel.com/1600/500/sports/1">
+		  <div class="carousel-caption">
+			<h4>First Thumbnail label</h4>
+			<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+		  </div>
 		</div>
-		Username: <input type="text" name="username"><br/>
-		Password: <input type="password" name="pass"><br/>
-		<?php if(isset($_GET['log']) && $goodlogin == 0) echo "<font color=\"red\">Incorrect Username or Password</font><br>" ?>
-		<button class="btn" type="submit" value="Log In"><b>Log In</b></button>
-		</form>
-		<br/>
-		Don't have an account? <a href="?page=signup">Sign Up</a>
-	</div>-->
+		<div class="item">
+		  <img alt="" src="http://lorempixel.com/1600/500/sports/2">
+		  <div class="carousel-caption">
+			<h4>Second Thumbnail label</h4>
+			<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+		  </div>
+		</div>
+		<div class="item">
+		  <img alt="" src="http://lorempixel.com/1600/500/sports/3">
+		  <div class="carousel-caption">
+			<h4>Third Thumbnail label</h4>
+			<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+		  </div>
+		</div>
+	  </div>
+
+	  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	  </a>
+	  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	  </a>
+	</div>	
+	
 	<div class="container">
-		<form class="form-signin">
-			<h2 class="form-signin-heading">Please sign in!</h2>
-			<input type="text" class="input-block-level" name="username" placeholder="Username">
-			<input type="password" class="input-block-level" name="pass" placeholder="Password"><br/>
-			<?php if(isset($_GET['log']) && $goodlogin == 0) echo "<font color=\"red\">Incorrect Username or Password</font><br>" ?>
-			<br>
-			<button class="btn btn-large btn-primary" type="submit">Sign in</button>
-		</form><br/>
-		
-		Don't have an account? <a href="?page=signup">Sign Up</a>
+		<div class="well well-small">
+			<form class="form-signin">
+				<h2 class="form-signin-heading">Please sign in!</h2>
+				<input type="text" class="input-block-level" name="username" placeholder="Username">
+				<input type="password" class="input-block-level" name="pass" placeholder="Password"><br/>
+				<?php if(isset($_GET['log']) && $goodlogin == 0) echo "<font color=\"red\">Incorrect Username or Password</font><br>" ?>
+				<br>
+				<button class="btn btn-large btn-primary" type="submit">Sign in</button>
+			</form><br/>
 			
-
-		<!--span id="signinButton">
-		  <span
-		   class="g-signin"
-		   data-callback="signinCallback"
-		   data-clientid="315155486850-n914vts3enlr0d1clc0le9npa29aukpk.apps.googleusercontent.com"
-		   data-cookiepolicy="single_host_origin"
-		   data-scope="profile">
-		  </span>
-		</span-->
-
+			Don't have an account? <a href="?page=signup">Sign Up</a>
+		</div>
+		
 		<div id="signin-button" class="show">
 			<div class="g-signin"
 			data-callback="loginFinishedCallback"
@@ -127,7 +137,7 @@
 
 		<div id="email"></div>
 		</div>
-	</div> 
+	</div>
 <?php
 	}
 	else
