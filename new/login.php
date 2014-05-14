@@ -100,10 +100,9 @@
 		<span class="glyphicon glyphicon-chevron-right"></span>
 	  </a>
 	</div>	
-	
 	<div class="container">
 		<div class="well well-small">
-			<form class="form-signin">
+			<form class="form-signin" method="post" action="?page=login&log=true">
 				<h2 class="form-signin-heading">Please sign in!</h2>
 				<input type="text" class="input-block-level" name="username" placeholder="Username">
 				<input type="password" class="input-block-level" name="pass" placeholder="Password"><br/>
