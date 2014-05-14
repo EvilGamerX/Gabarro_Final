@@ -1,13 +1,14 @@
 <article id="browse_page" >
     
-        <div class="carousel slide" id="myCarousel">
-	  <ol class="carousel-indicators">
+    <div class="carousel slide" id="myCarousel">
+		<ol class="carousel-indicators">
 		<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
 		<li data-slide-to="1" data-target="#myCarousel" class=""></li>
 		<li data-slide-to="2" data-target="#myCarousel" class=""></li>
-	  </ol>
-	  <div class="carousel-inner">
+		</ol>
+		<div class="carousel-inner">
 		<div class="item active">
+
 		  <img alt="Titianfall XbOne" src="http://3beardsgaming.com/wp-content/uploads/2014/03/titanfall-banner-slice.jpg">
 		  <div class="carousel-caption">
 			<h4>Titianfall Xbox One</h4>
@@ -28,14 +29,13 @@
 			<p><strong>$49.49</strong></p>
 		  </div>
 		</div>
-	  </div>
 
-	  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
 		<span class="glyphicon glyphicon-chevron-left"></span>
-	  </a>
-	  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+		</a>
+		<a class="right carousel-control" href="#myCarousel" data-slide="next">
 		<span class="glyphicon glyphicon-chevron-right"></span>
-	  </a>
+		</a>
 	</div>
 
     
