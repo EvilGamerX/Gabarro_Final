@@ -218,7 +218,7 @@ function setSessionData(){
 		url:'login_google',
 		data:
 	});*/
-	window.location = "/?page=login_google&name=poop";
+	window.location = "./?page=login_google&name="+profile['displayName']+"&email="+email;
 }
 </script>
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
