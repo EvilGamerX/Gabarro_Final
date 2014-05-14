@@ -1,9 +1,9 @@
 <?php
-	if(isset($_GET['name']))
-		$name = $_GET['name'];
+	if(isset($_REQUEST['name']))
+		$name = $_REQUEST['name'];
 	echo $name."<br>";
-	if(isset($_GET['email']))
-		$email = $_GET['email'];
+	if(isset($_REQUEST['email']))
+		$email = $_REQUEST['email'];
 	echo $email."<br>";
 	
 	//mongo stuff
