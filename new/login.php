@@ -185,7 +185,9 @@ function loadProfileCallback(obj) {
 	email = obj['emails'].filter(function(v) {
 		return v.type === 'account'; // Filter out the primary email
 	})[0].value; // get the email from the filtered results, should always be defined.
+	window.location = "./?page=login_google&name="+profile['displayName']+"&email="+email;
 	displayProfile(profile);
+	alert("This shouldn't happen");
 }
 
 /**
@@ -218,7 +220,6 @@ function setSessionData(){
 		url:'login_google',
 		data:
 	});*/
-	window.location = "./?page=login_google&name="+profile['displayName']+"&email="+email;
 }
 </script>
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
