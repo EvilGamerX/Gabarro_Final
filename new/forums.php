@@ -37,6 +37,10 @@ jQuery(document).ready(function($) {
 		if(isset($_POST['new_post']))
 		{
 			$msg = addslashes(strip_tags(str_replace(';', '\;',$_POST['new_post'])));
+			if($msg=="")
+				echo "";
+			else
+			{
 			//$db->send_sql("INSERT INTO posts(user_id, topic_id, post_data) VALUES (\"$uid\", \"$t\", \"$msg\");");
 			$collection = $mdb->selectCollection("posts");
 			$mymax = $collection->find();
@@ -49,6 +53,7 @@ jQuery(document).ready(function($) {
 			$absmax++;
 			$pid = $absmax;
 			$collection->insert(array("uid"=>$uid, "tid"=>$t, "pdata"=>$msg, "pid"=>$pid));
+			}
 		}
 
 		disp_posts($t, $db, $mdb);
@@ -104,7 +109,7 @@ jQuery(document).ready(function($) {
 		echo "<h2><center>".$title."</center></h2>
 
 		<div id=\"posts\">
-			<table border=\"1\" align=\"center\">";
+			<table class=\"table table-striped table-bordered\" border=\"1\" align=\"center\">";
 
 		$first = 1;
 
@@ -148,30 +153,6 @@ jQuery(document).ready(function($) {
 			}
 		
 		}
-		/*while($res = mysql_fetch_assoc($posts))
-		{
-			$usr = mysql_fetch_assoc($db->send_sql("SELECT username, id FROM user_info WHERE id=".$res['user_id'].";"));
-
-			echo
-				"<tr>
-					<td align=\"center\" class=\"wrapword\">
-					<b>".(isset($usr['username']) ? $usr['username'] : "DELETED")." said:</b>
-					<br>".$res['post_data']."</td>";
-
-			if(isset($_SESSION['uid']))
-			{
-				if($_SESSION['access'] && $first)
-				{
-					echo "<td><a href =\"?page=del&tid=".$res['post_id']."&pid=0&t=".$topic_id."&sf=".$title['sub_forum_id']."&td=1\" onclick=\"return confirm('Confirm Delete?')\">Delete</a>";
-				}
-				if((($usr['id'] == $_SESSION['uid']) || $_SESSION['access']) && !($first))
-				{
-					echo "<td><a href =\"?page=del&pid=".$res['post_id']."&t=".$topic_id."&sf=0&td=0\" onclick=\"return confirm('Confirm Delete?')\">Delete</a>";
-				}
-					echo "</tr>";
-			}
-			$first = 0;
-		}*/
 		echo "</table>
 		</div>";
 
@@ -218,13 +199,13 @@ jQuery(document).ready(function($) {
 
 		if($counter <= 0)
 		{
-			echo "<h1 align=\"center\">There doesn't seem to be anything here.</h1>";
+			echo "<h1 align=\"center\"><div class=\"alert alert-danger\">There are no posts in this forum yet.</div></h1>";
 			exit(0);
 		}
 
 		echo
 		"<div id=\"forum_main\" class=\"main\">
-			<table border=\"1\" width=\"100%\" align=\"center\" cellpadding=\"5\" cellspacing=\"1\">";
+			<table class=\"table table-striped table-bordered\" border=\"1\" width=\"100%\" align=\"center\" cellpadding=\"5\" cellspacing=\"1\">";
 
 		foreach($cursor as $doc)
 		{
@@ -243,7 +224,7 @@ jQuery(document).ready(function($) {
 		if($forum_id)
 		{
 			$collection = $mdb->selectCollection('subforums');
-			$forums = $db->send_sql("SELECT * FROM sub_forums WHERE forum_id=".$forum_id.";");
+			//$forums = $db->send_sql("SELECT * FROM sub_forums WHERE forum_id=".$forum_id.";");
 		
 
 			$cursor = $collection->find();
@@ -257,7 +238,7 @@ jQuery(document).ready(function($) {
 
 			echo
 			"<div id=\"forum_main\" class=\"main\">
-				<table border=\"1\" width=\"100%\" align=\"center\" cellpadding=\"5\" cellspacing=\"1\">";
+				<table class=\"table table-striped table-bordered\" border=\"1\" width=\"100%\" align=\"center\" cellpadding=\"5\" cellspacing=\"1\">";
 
 			foreach($cursor as $doc)
 			{
@@ -286,7 +267,7 @@ jQuery(document).ready(function($) {
 			$cursor = $collection->find();
 			echo
 				"<div id=\"forum_main\" class=\"main\">
-					<table border=\"1\" width=\"100%\" align=\"center\" cellpadding=\"5\" cellspacing=\"1\">";
+					<table class=\"table table-striped table-bordered\" border=\"1\" width=\"100%\" align=\"center\" cellpadding=\"5\" cellspacing=\"1\">";
 
 			foreach($cursor as $doc)
 			{
