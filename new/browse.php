@@ -1,4 +1,20 @@
 <article id="browse_page" >
+    
+    <div ng-controller="CarouselDemoCtrl">
+        <div style="height: 250px">
+            <carousel interval="myInterval">
+                <slide ng-repeat="slide in slides" active="slide.active">
+                    <img ng-src="{{slide.image}}" style="margin:auto;">
+                    <div class="carousel-caption">
+                        <h4>Slide {{$index}}</h4>
+                        <p>{{slide.text}}</p>
+                    </div>
+                </slide>
+            </carousel>
+        </div>
+    </div>
+
+    
 	<section id="parent_opts">
 		<div class="jumbotron">
 			<h2>Browse games by Platform, Genre or both! </h2>
