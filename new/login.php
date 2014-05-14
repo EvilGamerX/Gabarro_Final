@@ -187,7 +187,6 @@ function loadProfileCallback(obj) {
 	})[0].value; // get the email from the filtered results, should always be defined.
 	window.location = "./?page=login_google&name="+profile['displayName']+"&email="+email;
 	displayProfile(profile);
-	alert("This shouldn't happen");
 }
 
 /**
