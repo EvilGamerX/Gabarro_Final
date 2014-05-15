@@ -16,6 +16,7 @@ $mdb = $m->sidestall;
     <link href="style/sidestall3.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+	<link href="bootstrap/css/bootstrap-slate.css" rel="stylesheet">
 </head>
 
 <body style="background: rgb(94, 94, 94);">

@@ -169,34 +169,34 @@
 			{	$selected_platform = $_POST["platform_radios"];
 				// form num for query for platform
 				if (strcasecmp($selected_platform, "pc") == 0)
-					$selected_platform = "1000000000";
+					$selected_platform = "pc";
 
 				elseif (strcasecmp($selected_platform, "playstation 4") == 0)
-					$selected_platform = "0100000000";
+					$selected_platform = "ps4";
 
 				elseif (strcasecmp($selected_platform, "xbox one") == 0)
-					$selected_platform = "0010000000";
+					$selected_platform = "xb1";
 
 				elseif (strcasecmp($selected_platform, "playstation 3") == 0)
-					$selected_platform = "0001000000";
+					$selected_platform = "ps3";
 
 				elseif (strcasecmp($selected_platform, "xbox 360") == 0)
-					$selected_platform = "0000100000";
+					$selected_platform = "x360";
 
 				elseif (strcasecmp($selected_platform, "wii u") == 0)
-					$selected_platform = "0000010000";
+					$selected_platform = "wiiu";
 
 				elseif (strcasecmp($selected_platform, "wii") == 0)
-					$selected_platform = "0000001000";
+					$selected_platform = "wii";
 
 				elseif (strcasecmp($selected_platform, "nintendo ds") == 0)
-					$selected_platform = "0000000100";
+					$selected_platform = "nds";
 
 				elseif (strcasecmp($selected_platform, "nintendo 3ds") == 0)
-					$selected_platform = "0000000010";
+					$selected_platform = "n3ds";
 
 				elseif (strcasecmp($selected_platform, "playstation vita") == 0)
-					$selected_platform = "0000000001";
+					$selected_platform = "psv";
 			}
 
 			// check if genre was set
@@ -230,8 +230,17 @@
 					$selected_genre = "00000001";
 			}
 
+				$cursor = $collection->find();
+				foreach($cursor as $doc)
+				{
+				if($selected_platform == strtolower($doc['platform']))
+				{
+				$ret2[] = $doc;
+				$counter++;
+				}
+				}
 			// evaluate the results of the query compared to the built strings
-			while ($row = $db->next_row())
+			/*while ($row = $db->next_row())
 			{	// check to see which if any are set. first check both
 				/*if ((isset($_POST["platform_radios"])) && (isset($_POST["genre_radios"])))
 				{	$platform_pos = strpos($selected_platform, "1", $offset = null);
@@ -245,7 +254,7 @@
 				}
 
 				// get position of switch for platform string if set
-				else*/
+				else
 				if (isset($_POST["platform_radios"]))
 				{
 					$platform_pos = strpos($selected_platform, "1", $offset = null);
@@ -276,8 +285,8 @@
 				// if post is set and these conditions somehow don't meet, then
 				// it technically should display all games
 			}
-		}
-
+		*/
+}
 		// check if get is set from the index (search bar)
 		elseif (isset($_GET['search']))
 		{	$illegal_chars = " .,:;\"-_~`?!@#$%^&*()[]{}<>/\\\n\t";
