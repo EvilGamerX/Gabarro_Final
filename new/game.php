@@ -1,7 +1,4 @@
 <?php
-// author: TJ
-
-
 
 if (isset($_GET['secret_game_id_pass']))
 {
@@ -9,19 +6,33 @@ if (isset($_GET['secret_game_id_pass']))
 	{
 	$usrid = $_SESSION['uid'];
 	$gameid = $_GET['secret_game_id_pass'];
+	$collection = $mdb->selectCollection("wishlist");
 	if($_GET['toggle']==1)
 	{
-		$quer = "INSERT INTO wishlist (uID, gID) VALUES ($usrid, $gameid)";
+		
+		//$quer = "INSERT INTO wishlist (uID, gID) VALUES ($usrid, $gameid)";
+		$collection->insert(array("uid"=>$usrid, "gid"=>$gameid));
 	}
 	else
-		$quer = "DELETE FROM wishlist WHERE uID = $usrid AND gID = $gameid";
+		$collection->remove(array("uid"=>$usrid, "gid"=>$gameid));
+		//$quer = "DELETE FROM wishlist WHERE uID = $usrid AND gID = $gameid";
 
-	$res = $db->send_sql($quer);
+	//$res = $db->send_sql($quer);
 	}
 
 
 	$game = $_GET['secret_game_id_pass'];
-
+	$collection = $mdb->selectCollection("game_table");
+	$cursor = $collection->find();
+	$gameinfo;
+	foreach($cursor as $doc)
+	{
+	if($doc['gid'] == $game)
+	{
+		$gameinfo = $doc;
+		break;
+		}
+	}
 	$quer = "SELECT * FROM game_table WHERE id='$game'";
 	$ret = $db->send_sql($quer);
 	$results = $db->next_row();
@@ -30,19 +41,29 @@ if (isset($_GET['secret_game_id_pass']))
 
 	// echo the game details part
 	echo "<section id='game_details' align='center'>";
-	echo "<div class='well'><h2 align='center'>" . $results[1] . "</h2></div>";
+	echo "<div class='well'><h2 align='center'>" . $gameinfo['name'] . "</h2></div>";
 
-	echo "<img id='game_image' src=\"" . $results[5] . "\" alt='$game' style='float:middle' /><br/>";
-	echo "<a href=\"" . $results[4] . "\" align='middle'>Buy this game on Amazon!</a>";
+	echo "<img id='game_image' src=\"" . $gameinfo['image'] . "\" alt='$game' style='float:middle' /><br/>";
+	echo "<a href=\"" . $gameinfo['amazon'] . "\" align='middle'>Buy this game on Amazon!</a>";
 	echo "</section>";
 
 	if(isset($_SESSION['uid']))
 	{
 		$usrid = $_SESSION['uid'];
-		$quer = "SELECT * FROM wishlist WHERE uID = " . $usrid . " AND gID = " . $game;
-		$res = $db->send_sql($quer);
+		//$quer = "SELECT * FROM wishlist WHERE uID = " . $usrid . " AND gID = " . $game;
+		//$res = $db->send_sql($quer);
 
-		if(mysql_num_rows($res)==0)
+		$collection = $mdb->selectCollection("wishlist");
+		$cursor = $collection->find();
+		$onlist = false;
+		foreach($cursor as $doc)
+		{
+			if($doc['gid'] == $game && $doc['uid'] == $usrid)
+			{
+			$onlist = true;
+			}
+		}
+		if(!$onlist)
 		{
 		echo "<form id='wish1' action='' method='get' align='center'>
 			<input type='hidden' name='page' value='game'>

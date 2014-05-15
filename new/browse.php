@@ -11,7 +11,7 @@
 
 			  <img alt="Titanfall XbOne" src="http://3beardsgaming.com/wp-content/uploads/2014/03/titanfall-banner-slice.jpg">
 			  <div class="carousel-caption">
-				<h4>Titianfall Xbox One</h4>
+				<h4>Titanfall Xbox One</h4>
 				<p><strong>$57.44</strong></p>
 			  </div>
 			</div>
@@ -149,7 +149,9 @@
 		$quer = "SELECT * FROM game_table";
 		$res = $db->send_sql($quer);
 		$ret;
-
+		$ret2;
+		$collection = $mdb->selectCollection("game_table");
+		$counter = 0;
 		// FER BLOWIN' SHIT UP (meant to be read in dumb southern accent).
 			// super explode function gabarro gave us!
 			function superExplode($s, $sep)
@@ -282,7 +284,26 @@
 			$search = superExplode(strtolower(strip_tags($_GET['search'])), $illegal_chars);
 
 			// search all games
-			while ($row = $db->next_row())
+			$cursor = $collection->find();
+			
+			foreach($cursor as $doc)
+			{
+			$row_name = superExplode(strtolower($doc['name']), $illegal_chars);
+			$found = false;
+			foreach($search as $word)
+			{
+				foreach($row_name as $word2)
+				{
+						if (strcasecmp($word, $word2) == 0)
+						{	$ret2[] = $doc;
+							$counter++;
+							$found = TRUE;
+							break;
+						}					
+				}
+			}
+			}
+			/*while ($row = $db->next_row())
 			{	// use column 1, that's the game name column.
 				$row_name = superExplode(strtolower($row[1]), $illegal_chars);
 				$found = FALSE;
@@ -291,7 +312,7 @@
 				{	foreach ($row_name as $word2)
 					{	// if words are same (search term exists in game name) add to ret array
 						if (strcasecmp($word, $word2) == 0)
-						{	$ret[] = $row;
+						{	//$ret[] = $row;
 							$found = TRUE;
 							break;
 						}
@@ -300,26 +321,29 @@
 					if ($found === TRUE)
 						break;
 				}
-			}
+			}*/
 		}
 
 		// if post and get wasn't set, assume they haven't selected everything and auto load all games to results
 		// build array of all games from db. Can be used as a sort of cache so when next page/prev page
 		// buttons are hit, they're already in script memory
 		else
-		{	while ($row = $db->next_row())
-				$ret[] = $row;
+		{	
+			$counter = 0;
+			$cursor = $collection->find();
+			foreach($cursor as $doc)
+			{
+				$counter++;
+				$ret2[] = $doc;
+			}
+		/*while ($row = $db->next_row())
+				$ret[] = $row;*/
 		}
 
 		echo "<section id=\"game_results\">";
 		echo "<h3>Games</h3>";
 
-		if(isset($ret))
-		{
-		$num_results = count($ret);
-		}
-		else
-		$num_results=0;
+		$num_results = $counter;
 		//echo $num_results;
 		// print result table
 		echo "<div id=\"table_wrapper\">";
@@ -332,11 +356,11 @@
 			echo "<tr>";
 			for ($j = $i; (($j < ($i + 5)) && ($j < $num_results)); $j++)
 			{	echo "<td><form name=".$j." action='' method='get'>";
-				echo "<input type='image' name='game_result' src=\"". $ret[$j][5] . "\" value='Submit' onclick='reroute(" . $ret[$j][0] . ")'>";
+				echo "<input type='image' name='game_result' src=\"". $ret2[$j]["image"] . "\" value='Submit' onclick='reroute(" . $ret2[$j]["gid"] . ")'>";
 				//echo "<a href='#' class='thumbnail'>";
 				//echo "<img data-src=\"".$ret[$j][5]."\" name='game_result' value='Submit' onclick='reroute(".$ret[$j][0].")'></a>";
 				echo "<input type='hidden' name='page' value='game'>";
-				echo "<input type='hidden' name='secret_game_id_pass' value=".$ret[$j][0].">";
+				echo "<input type='hidden' name='secret_game_id_pass' value=".$ret2[$j]["gid"].">";
 				//echo "<input type='hidden' name='secret_game_id_pass' value=\"" . $ret[$j][0] . "\"
 				echo "</form></td>";
 			//	echo "<td><form name=".$j." action='' method='get'>";
