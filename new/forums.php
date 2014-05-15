@@ -26,7 +26,7 @@ jQuery(document).ready(function($) {
 	if(isset($_SESSION['uid']))
 	{
 		$uid = $_SESSION['uid'];
-	}
+	
 
 
 	if(isset($_GET['t']))
@@ -75,6 +75,8 @@ jQuery(document).ready(function($) {
 		disp_forums(0, $db, $mdb);
 
 	}
+	}
+else echo "<center><h2>Why don't you try logging in first?</h2></center>";
 
 	function disp_posts($topic_id, $db, $mdb)
 	{
@@ -172,6 +174,7 @@ jQuery(document).ready(function($) {
 		}
 	}
 
+
 	function disp_topics($sub_forum_id, $db, $mdb, $uid)
 	{
 		//$topics = $db->send_sql("SELECT * FROM topics WHERE sub_forum_id=".$sub_forum_id.";");
@@ -192,6 +195,8 @@ jQuery(document).ready(function($) {
 		$counter=0;
 		if(!$muted)
 			echo "<div align=\"right\"><a href=\"?page=new_topic&sf=".$sub_forum_id."\">New Topic</a></div>";
+		else
+			echo "<div align=\"right\"><a href=\"#\">You are muted!</a></div>";
 		foreach($cursor as $doc)
 		{
 		$counter++;
@@ -205,7 +210,7 @@ jQuery(document).ready(function($) {
 
 		echo
 		"<div id=\"forum_main\" class=\"main\">
-			<table class=\"table table-striped table-bordered\" border=\"1\" width=\"100%\" align=\"center\" cellpadding=\"5\" cellspacing=\"1\">";
+			<table class=\"table table-striped table-bordered\" style=\"background-color: rgb(105, 200, 243);\" border=\"1\" width=\"100%\" align=\"center\" cellpadding=\"5\" cellspacing=\"1\">";
 
 		foreach($cursor as $doc)
 		{
@@ -267,7 +272,7 @@ jQuery(document).ready(function($) {
 			$cursor = $collection->find();
 			echo
 				"<div id=\"forum_main\" class=\"main\">
-					<table class=\"table table-striped table-bordered\" border=\"1\" width=\"100%\" align=\"center\" cellpadding=\"5\" cellspacing=\"1\">";
+					<table class=\"table table-striped table-bordered\" style=\"background-color: rgb(105, 200, 243);\" border=\"1\" width=\"100%\" align=\"center\" cellpadding=\"5\" cellspacing=\"1\">";
 
 			foreach($cursor as $doc)
 			{
