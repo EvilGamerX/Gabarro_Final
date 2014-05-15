@@ -227,11 +227,21 @@
 								if($doc['uid'] == $usrid)
 								{
 									$gid = $doc['gid'];
-									$quer = "SELECT name, image from game_table WHERE id = \"$gid\"";
-									$res2 = $db->send_sql($quer);
-									$dat = mysql_fetch_assoc($res2);
+									$collection2 = $mdb->selectCollection("game_table");
+									$cursor2 = $collection2->find();
+									foreach($cursor2 as $doc2)
+									{
+										if($doc2['gid'] == $gid)
+										{
+										$img = $doc2['image'];
+										echo "<td><img src=\"$img\"></img></td>";
+										}
+									}
+									//$quer = "SELECT name, image from game_table WHERE id = \"$gid\"";
+									//$res2 = $db->send_sql($quer);
+									/*$dat = mysql_fetch_assoc($res2);
 									$img = $dat['image'];
-									echo "<td><img src=\"$img\"></img></td>";
+									echo "<td><img src=\"$img\"></img></td>";*/
 								}
 							}
 							?>
