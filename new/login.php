@@ -77,6 +77,7 @@
 			<div id="signin-button" class="show">
 				<div class="g-signin"
 				data-callback="loginFinishedCallback"
+				data-approvalprompt="force"
 				data-clientid="315155486850-n914vts3enlr0d1clc0le9npa29aukpk.apps.googleusercontent.com"
 				data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read"
 				data-height="short"
