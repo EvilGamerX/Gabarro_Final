@@ -59,7 +59,7 @@
 	{
 ?>
 	<div id="page_data" align="center">
-	<div class="well">
+	<div class="well" style="background-color: rgb(105, 200, 243);">
 			<h2>Welcome to Side Stall!</h2>
 	</div>
 	

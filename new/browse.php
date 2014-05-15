@@ -9,7 +9,7 @@
 		<div class="carousel-inner">
 		<div class="item active">
 
-		  <img alt="Titianfall XbOne" src="http://3beardsgaming.com/wp-content/uploads/2014/03/titanfall-banner-slice.jpg">
+		  <img alt="Titanfall XbOne" src="http://3beardsgaming.com/wp-content/uploads/2014/03/titanfall-banner-slice.jpg">
 		  <div class="carousel-caption">
 			<h4>Titianfall Xbox One</h4>
 			<p><strong>$57.44</strong></p>
@@ -40,7 +40,7 @@
 
     
 	<section id="parent_opts">
-		<div class="jumbotron">
+		<div class="jumbotron" style="background-color: rgb(105, 200, 243);">
 			<h2>Browse games by Platform, Genre or both! </h2>
 		</div>
 		<ul>
