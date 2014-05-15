@@ -16,6 +16,7 @@ include("functions/db_class.php");
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
        <script src="javascript/carousel.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+	<link href="bootstrap/css/bootstrap-slate.css" rel="stylesheet">
 </head>
 
 <body style="background: rgb(94, 94, 94);">
