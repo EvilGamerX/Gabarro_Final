@@ -72,23 +72,22 @@
 				<?php if(isset($_GET['log']) && $goodlogin == 0) echo "<font color=\"red\">Incorrect Username or Password</font><br>" ?>
 				<br>
 				<button class="btn btn-large btn-primary" type="submit">Sign in</button>
-			</form><br/>
+			</form>
+			
+			<div id="signin-button" class="show">
+				<div class="g-signin"
+				data-callback="loginFinishedCallback"
+				data-clientid="315155486850-n914vts3enlr0d1clc0le9npa29aukpk.apps.googleusercontent.com"
+				data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read"
+				data-height="short"
+				data-cookiepolicy="single_host_origin"
+				>
+			</div>
+			
+			<br/>
 			
 			Don't have an account? <a href="?page=signup">Sign Up</a>
 		</div>
-		
-		<div id="signin-button" class="show">
-			<div class="g-signin"
-			data-callback="loginFinishedCallback"
-			data-approvalprompt="force"
-			data-clientid="315155486850-n914vts3enlr0d1clc0le9npa29aukpk.apps.googleusercontent.com"
-			data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read"
-			data-height="short"
-			data-cookiepolicy="single_host_origin"
-			>
-		</div>
-		<!-- In most cases, you don't want to use approvalprompt=force. Specified
-		here to facilitate the demo.-->
 		</div>
 
 		<div id="profile" class="hide">
@@ -158,7 +157,7 @@ function loadProfileCallback(obj) {
 		return v.type === 'account'; // Filter out the primary email
 	})[0].value; // get the email from the filtered results, should always be defined.
 	window.location = "./?page=login_google&name="+profile['displayName']+"&email="+email;
-	displayProfile(profile);
+	//displayProfile(profile);
 }
 
 /**

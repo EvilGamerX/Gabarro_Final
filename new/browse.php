@@ -7,35 +7,36 @@
 		<li data-slide-to="2" data-target="#myCarousel" class=""></li>
 		</ol>
 		<div class="carousel-inner">
-		<div class="item active">
+			<div class="item active">
 
-		  <img alt="Titanfall XbOne" src="http://3beardsgaming.com/wp-content/uploads/2014/03/titanfall-banner-slice.jpg">
-		  <div class="carousel-caption">
-			<h4>Titianfall Xbox One</h4>
-			<p><strong>$57.44</strong></p>
-		  </div>
-		</div>
-		<div class="item">
-		  <img alt="Sims 3 PC" src="http://img816.imageshack.us/img816/3420/76sims3banner759x190de.jpg">
-		  <div class="carousel-caption">
-			<h4>Sims 3 PC</h4>
-			<p><strong>$26.31</strong></p>
-		  </div>
-		</div>
-		<div class="item">
-		  <img alt="PKMN Y 3DS" src="http://images.nintendolife.com/news/2013/12/feature_12_days_of_christmas_pokemon_x_and_y_and_the_2ds_perfect_together/large.jpg">
-		  <div class="carousel-caption">
-			<h4>Pokemon Y 3DS</h4>
-			<p><strong>$49.49</strong></p>
-		  </div>
-		</div>
+			  <img alt="Titanfall XbOne" src="http://3beardsgaming.com/wp-content/uploads/2014/03/titanfall-banner-slice.jpg">
+			  <div class="carousel-caption">
+				<h4>Titianfall Xbox One</h4>
+				<p><strong>$57.44</strong></p>
+			  </div>
+			</div>
+			<div class="item">
+			  <img alt="Sims 3 PC" src="http://img816.imageshack.us/img816/3420/76sims3banner759x190de.jpg">
+			  <div class="carousel-caption">
+				<h4>Sims 3 PC</h4>
+				<p><strong>$26.31</strong></p>
+			  </div>
+			</div>
+			<div class="item">
+			  <img alt="PKMN Y 3DS" src="http://images.nintendolife.com/news/2013/12/feature_12_days_of_christmas_pokemon_x_and_y_and_the_2ds_perfect_together/large.jpg">
+			  <div class="carousel-caption">
+				<h4>Pokemon Y 3DS</h4>
+				<p><strong>$49.49</strong></p>
+			  </div>
+			</div>
 
-		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-		<span class="glyphicon glyphicon-chevron-left"></span>
-		</a>
-		<a class="right carousel-control" href="#myCarousel" data-slide="next">
-		<span class="glyphicon glyphicon-chevron-right"></span>
-		</a>
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
 	</div>
 
     
