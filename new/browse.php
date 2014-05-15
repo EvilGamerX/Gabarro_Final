@@ -11,7 +11,7 @@
 
 			  <img alt="Titanfall XbOne" src="http://3beardsgaming.com/wp-content/uploads/2014/03/titanfall-banner-slice.jpg">
 			  <div class="carousel-caption">
-				<h4>Titanfall Xbox One</h4>
+				<h4>Titianfall Xbox One</h4>
 				<p><strong>$57.44</strong></p>
 			  </div>
 			</div>
@@ -41,7 +41,7 @@
 
     
 	<section id="parent_opts">
-		<div class="well well-small" style="background-color: rgb(105, 200, 243);">
+		<div class="jumbotron" style="background-color: rgb(105, 200, 243);">
 			<h2>Browse games by Platform, Genre or both! </h2>
 		</div>
 		<ul>
@@ -200,9 +200,7 @@
 		$quer = "SELECT * FROM game_table";
 		$res = $db->send_sql($quer);
 		$ret;
-		$ret2;
-		$collection = $mdb->selectCollection("game_table");
-		$counter = 0;
+
 		// FER BLOWIN' SHIT UP (meant to be read in dumb southern accent).
 			// super explode function gabarro gave us!
 			function superExplode($s, $sep)
@@ -220,34 +218,34 @@
 			{	$selected_platform = $_POST["platform_radios"];
 				// form num for query for platform
 				if (strcasecmp($selected_platform, "pc") == 0)
-					$selected_platform = "pc";
+					$selected_platform = "1000000000";
 
 				elseif (strcasecmp($selected_platform, "playstation 4") == 0)
-					$selected_platform = "ps4";
+					$selected_platform = "0100000000";
 
 				elseif (strcasecmp($selected_platform, "xbox one") == 0)
-					$selected_platform = "xb1";
+					$selected_platform = "0010000000";
 
 				elseif (strcasecmp($selected_platform, "playstation 3") == 0)
-					$selected_platform = "ps3";
+					$selected_platform = "0001000000";
 
 				elseif (strcasecmp($selected_platform, "xbox 360") == 0)
-					$selected_platform = "x360";
+					$selected_platform = "0000100000";
 
 				elseif (strcasecmp($selected_platform, "wii u") == 0)
-					$selected_platform = "wiiu";
+					$selected_platform = "0000010000";
 
 				elseif (strcasecmp($selected_platform, "wii") == 0)
-					$selected_platform = "wii";
+					$selected_platform = "0000001000";
 
 				elseif (strcasecmp($selected_platform, "nintendo ds") == 0)
-					$selected_platform = "nds";
+					$selected_platform = "0000000100";
 
 				elseif (strcasecmp($selected_platform, "nintendo 3ds") == 0)
-					$selected_platform = "n3ds";
+					$selected_platform = "0000000010";
 
 				elseif (strcasecmp($selected_platform, "playstation vita") == 0)
-					$selected_platform = "psv";
+					$selected_platform = "0000000001";
 			}
 
 			// check if genre was set
@@ -281,17 +279,8 @@
 					$selected_genre = "00000001";
 			}
 
-				$cursor = $collection->find();
-				foreach($cursor as $doc)
-				{
-				if($selected_platform == strtolower($doc['platform']))
-				{
-				$ret2[] = $doc;
-				$counter++;
-				}
-				}
 			// evaluate the results of the query compared to the built strings
-			/*while ($row = $db->next_row())
+			while ($row = $db->next_row())
 			{	// check to see which if any are set. first check both
 				/*if ((isset($_POST["platform_radios"])) && (isset($_POST["genre_radios"])))
 				{	$platform_pos = strpos($selected_platform, "1", $offset = null);
@@ -305,7 +294,7 @@
 				}
 
 				// get position of switch for platform string if set
-				else
+				else*/
 				if (isset($_POST["platform_radios"]))
 				{
 					$platform_pos = strpos($selected_platform, "1", $offset = null);
@@ -336,34 +325,15 @@
 				// if post is set and these conditions somehow don't meet, then
 				// it technically should display all games
 			}
-		*/
-}
+		}
+
 		// check if get is set from the index (search bar)
 		elseif (isset($_GET['search']))
 		{	$illegal_chars = " .,:;\"-_~`?!@#$%^&*()[]{}<>/\\\n\t";
 			$search = superExplode(strtolower(strip_tags($_GET['search'])), $illegal_chars);
 
 			// search all games
-			$cursor = $collection->find();
-			
-			foreach($cursor as $doc)
-			{
-			$row_name = superExplode(strtolower($doc['name']), $illegal_chars);
-			$found = false;
-			foreach($search as $word)
-			{
-				foreach($row_name as $word2)
-				{
-						if (strcasecmp($word, $word2) == 0)
-						{	$ret2[] = $doc;
-							$counter++;
-							$found = TRUE;
-							break;
-						}					
-				}
-			}
-			}
-			/*while ($row = $db->next_row())
+			while ($row = $db->next_row())
 			{	// use column 1, that's the game name column.
 				$row_name = superExplode(strtolower($row[1]), $illegal_chars);
 				$found = FALSE;
@@ -372,7 +342,7 @@
 				{	foreach ($row_name as $word2)
 					{	// if words are same (search term exists in game name) add to ret array
 						if (strcasecmp($word, $word2) == 0)
-						{	//$ret[] = $row;
+						{	$ret[] = $row;
 							$found = TRUE;
 							break;
 						}
@@ -381,29 +351,26 @@
 					if ($found === TRUE)
 						break;
 				}
-			}*/
+			}
 		}
 
 		// if post and get wasn't set, assume they haven't selected everything and auto load all games to results
 		// build array of all games from db. Can be used as a sort of cache so when next page/prev page
 		// buttons are hit, they're already in script memory
 		else
-		{	
-			$counter = 0;
-			$cursor = $collection->find();
-			foreach($cursor as $doc)
-			{
-				$counter++;
-				$ret2[] = $doc;
-			}
-		/*while ($row = $db->next_row())
-				$ret[] = $row;*/
+		{	while ($row = $db->next_row())
+				$ret[] = $row;
 		}
 
 		echo "<section id=\"game_results\">";
 		echo "<h3>Games</h3>";
 
-		$num_results = $counter;
+		if(isset($ret))
+		{
+		$num_results = count($ret);
+		}
+		else
+		$num_results=0;
 		//echo $num_results;
 		// print result table
 		echo "<div id=\"table_wrapper\">";
@@ -416,11 +383,11 @@
 			echo "<tr>";
 			for ($j = $i; (($j < ($i + 5)) && ($j < $num_results)); $j++)
 			{	echo "<td><form name=".$j." action='' method='get'>";
-				echo "<input type='image' name='game_result' src=\"". $ret2[$j]["image"] . "\" value='Submit' onclick='reroute(" . $ret2[$j]["gid"] . ")'>";
+				echo "<input type='image' name='game_result' src=\"". $ret[$j][5] . "\" value='Submit' onclick='reroute(" . $ret[$j][0] . ")'>";
 				//echo "<a href='#' class='thumbnail'>";
 				//echo "<img data-src=\"".$ret[$j][5]."\" name='game_result' value='Submit' onclick='reroute(".$ret[$j][0].")'></a>";
 				echo "<input type='hidden' name='page' value='game'>";
-				echo "<input type='hidden' name='secret_game_id_pass' value=".$ret2[$j]["gid"].">";
+				echo "<input type='hidden' name='secret_game_id_pass' value=".$ret[$j][0].">";
 				//echo "<input type='hidden' name='secret_game_id_pass' value=\"" . $ret[$j][0] . "\"
 				echo "</form></td>";
 			//	echo "<td><form name=".$j." action='' method='get'>";
