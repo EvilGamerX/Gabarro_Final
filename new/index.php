@@ -1,24 +1,25 @@
 <!DOCTYPE HTML>
 <?php
 session_start();
-include("functions/db_class.php");
-$db = new database();
-$db->setup("mgrinthal", "mattdamon", "localhost", "sidestall");
+//include("functions/db_class.php");
+//$db = new database();
+//$db->setup("mgrinthal", "mattdamon", "localhost", "sidestall");
 //$lkid = connect();
-$m = new MongoClient();
-$mdb = $m->sidestall;
+//$m = new MongoClient();
+//$mdb = $m->sidestall;
 ?>
 <html>
 
 <head>
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.slate.min.css" rel="stylesheet">
     <link href="style/sidestall3.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 
-<body style="background: rgb(94, 94, 94);">
+<body>
 	<div class="container">
 		<nav class="navbar navbar-default" role="navigation">
 			<div class="container-fluid">

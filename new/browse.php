@@ -1,34 +1,35 @@
 <article id="browse_page" >
     
-    <div class="carousel slide" id="myCarousel">
+    <div class="carousel slide" id="myCarousel" data-ride="carousel">
 		<ol class="carousel-indicators">
-		<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
-		<li data-slide-to="1" data-target="#myCarousel" class=""></li>
-		<li data-slide-to="2" data-target="#myCarousel" class=""></li>
+			<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+			<li data-slide-to="1" data-target="#myCarousel" class=""></li>
+			<li data-slide-to="2" data-target="#myCarousel" class=""></li>
 		</ol>
 		<div class="carousel-inner">
 			<div class="item active">
 
 			  <img alt="Titanfall XbOne" src="http://3beardsgaming.com/wp-content/uploads/2014/03/titanfall-banner-slice.jpg">
-			  <div class="carousel-caption">
+			  <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
 				<h4>Titanfall Xbox One</h4>
 				<p><strong>$57.44</strong></p>
 			  </div>
 			</div>
 			<div class="item">
 			  <img alt="Sims 3 PC" src="http://img816.imageshack.us/img816/3420/76sims3banner759x190de.jpg">
-			  <div class="carousel-caption">
+			  <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
 				<h4>Sims 3 PC</h4>
 				<p><strong>$26.31</strong></p>
 			  </div>
 			</div>
 			<div class="item">
 			  <img alt="PKMN Y 3DS" src="http://images.nintendolife.com/news/2013/12/feature_12_days_of_christmas_pokemon_x_and_y_and_the_2ds_perfect_together/large.jpg">
-			  <div class="carousel-caption">
+			  <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
 				<h4>Pokemon Y 3DS</h4>
 				<p><strong>$49.49</strong></p>
 			  </div>
 			</div>
+		</div>
 
 			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
 			<span class="glyphicon glyphicon-chevron-left"></span>
@@ -36,12 +37,11 @@
 			<a class="right carousel-control" href="#myCarousel" data-slide="next">
 			<span class="glyphicon glyphicon-chevron-right"></span>
 			</a>
-		</div>
 	</div>
 
     
 	<section id="parent_opts">
-		<div class="well well-small" style="background-color: rgb(105, 200, 243);">
+		<div class="well well-small">
 			<h2>Browse games by Platform, Genre or both! </h2>
 		</div>
 		<ul>
