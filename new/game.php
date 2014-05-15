@@ -50,8 +50,6 @@ if (isset($_GET['secret_game_id_pass']))
 	if(isset($_SESSION['uid']))
 	{
 		$usrid = $_SESSION['uid'];
-		//$quer = "SELECT * FROM wishlist WHERE uID = " . $usrid . " AND gID = " . $game;
-		//$res = $db->send_sql($quer);
 
 		$collection = $mdb->selectCollection("wishlist");
 		$cursor = $collection->find();
@@ -84,7 +82,19 @@ if (isset($_GET['secret_game_id_pass']))
 
 	$quer = "SELECT * FROM game_review_table WHERE game_id='$game'";
 	$ret = $db->send_sql($quer);
-	if (mysql_num_rows($ret) != 0)
+	$collection = $mdb->selectCollection("reviews");
+	$counter = 0;
+	$cursor = $collection->find();
+	$ret=array();
+	foreach($cursor as $doc)
+	{
+	if($doc['gid'] == $game)
+	{
+		$counter++;
+		$ret[] = $doc;
+	}
+	}
+	if ($counter != 0)
 	{	// echo the reviews if any
 		echo "<h3>Reviews</h3>";
 		echo "<section id='game_reviews'>";
@@ -96,10 +106,10 @@ if (isset($_GET['secret_game_id_pass']))
 		echo "<tbody>";
 		
 		// loop through all results
-		while ($row = $db->next_row())
-		{	echo "<tr><td>" . $row[2] . "</td>";
-			echo "<td>" . $row[3] . "</td>";
-			echo "<td>" . $row[4] . "</td></tr>";
+		foreach($ret as $row)
+		{	echo "<tr><td>" . $row['username'] . "</td>";
+			echo "<td>" . $row['timestamp'] . "</td>";
+			echo "<td>" . $row['review'] . "</td></tr>";
 		}
 		echo "</tbody>";
 		echo "</table>";
@@ -111,9 +121,19 @@ if (isset($_GET['secret_game_id_pass']))
 	if (isset($_SESSION['uid']))
 	{	$uid = $_SESSION['uid'];
 		$username= $_SESSION['username'];
-		$quer_check = "SELECT * FROM game_review_table WHERE user_id='" . $uid . "' AND game_id='" . $game . "'";
-		$check = $db->send_sql($quer_check);
-		if (mysql_num_rows($check) == 0)
+		$reviewed = false;
+		//$quer_check = "SELECT * FROM game_review_table WHERE user_id='" . $uid . "' AND game_id='" . $game . "'";
+		$cursor = $collection->find();
+		foreach($cursor as $doc)
+		{
+		if($doc['uid'] == $uid && $doc['gid'] == $game)
+		{
+		$reviewed = true;
+		break;
+		}
+		}
+		//$check = $db->send_sql($quer_check);
+		if (!$reviewed)
 		{	// now to do the submit review section
 			echo "<section id='submit_review' align='center'>";
 			echo "<form action='' method='post'>";
@@ -132,9 +152,9 @@ if (isset($_GET['secret_game_id_pass']))
 	$uid = $_SESSION['uid'];
 	$prelim = $_POST['prelim_review'];
 	//$curtime = date('Y-m-d H:i:s', time());
-
-	$quer_submit = "INSERT INTO game_review_table (game_id, user_id, username, timestamp, review) VALUES (\"$sidp\", \"$uid\", \"$username\", CURRENT_TIMESTAMP, \"$prelim\")";
-	$res = $db->send_sql($quer_submit);
+	$collection->insert(array("gid"=>$sidp, "uid"=>$uid, "username"=>$username, "timestamp"=>time(), "review"=>$prelim));
+	//$quer_submit = "INSERT INTO game_review_table (game_id, user_id, username, timestamp, review) VALUES (\"$sidp\", \"$uid\", \"$username\", CURRENT_TIMESTAMP, \"$prelim\")";
+	//$res = $db->send_sql($quer_submit);
 	header("Location:#");
 	}
 
@@ -150,7 +170,7 @@ function wishlist(toggle)
 
 var mgID = $_GET[secret_game_id_pass'];
 var muID = $_SESSION['uid']
-
+/*
 if(toggle==1)
 {
 var quer = "INSERT INTO wishlist (uID, gID) VALUES (muID, mgID)";
@@ -158,7 +178,7 @@ var quer = "INSERT INTO wishlist (uID, gID) VALUES (muID, mgID)";
 else
 {
 var quer = "DELETE FROM wishlist WHERE uID = muID";
-}
+}*/
 
 
 

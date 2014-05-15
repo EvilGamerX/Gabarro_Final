@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
 <?php
 session_start();
-//include("functions/db_class.php");
-//$db = new database();
-//$db->setup("mgrinthal", "mattdamon", "localhost", "sidestall");
+include("functions/db_class.php");
+$db = new database();
+$db->setup("mgrinthal", "mattdamon", "localhost", "sidestall");
 //$lkid = connect();
-//$m = new MongoClient();
-//$mdb = $m->sidestall;
+$m = new MongoClient();
+$mdb = $m->sidestall;
 ?>
-<html>
+<html ng-app="plunker">
 
 <head>
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -16,7 +16,12 @@ session_start();
     <link href="bootstrap/css/bootstrap.slate.min.css" rel="stylesheet">
     <link href="style/sidestall3.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+       <script src="javascript/carousel.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+	<link href="bootstrap/css/bootstrap-slate.css" rel="stylesheet">
 </head>
 
 <body>
@@ -57,6 +62,7 @@ session_start();
 				</div>
 			</div>
 		</nav>
+        
 		<?php
 			if(isset($_REQUEST['page']))
 			{
