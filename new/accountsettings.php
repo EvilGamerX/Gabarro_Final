@@ -142,73 +142,77 @@
 		<?php
 		}
 		?>
-		<input type="submit" value="Change Email Address" onclick="display('emailchange')"></input><br><br>
+		<div class="well" style="background-color: rgb(105, 200, 243);">
+			<input type="submit" value="Change Email Address" onclick="display('emailchange')"></input><br><br>
 
-		<div id="emailchange" style="display:none">
+			<div id="emailchange" style="display:none">
 
-			<b>New Email Address: </b>
+				<b>New Email Address: </b>
 
-			<form action="" method="get">
-			<input type="text" name="newemail"></input><input type="submit" value="Submit"></input>
-			<input type="hidden" name="page" value="accountsettings">
-			</form>
-			<br>
-
-		</div>
-
-		<input type="submit" value="Notification Preferences" onclick="display('notificpref')"></input><br><br>
-
-		<div id="notificpref" style="display:none">
-			<form action="">
-			<input type="radio" name="notific-pref" value="onsite" <?php if($pref==0) echo "checked=\"true\""?>>On-Site Only<br>
-			<input type="radio" name="notific-pref" value="email" <?php if($pref==1) echo "checked=\"true\""?>>Email + On-site
-			<br>
-			<input type="hidden" name="page" value="accountsettings">
-			<input type="submit" value="Submit">
-			</form>
-			<br>
-		</div>
-
-		<input type="submit" value="Change Password" onclick="display('passwordchange')"></input><br><br>
-
-		<div id="passwordchange" style="display:none">
-
-			<form action="" method="post">
-			<b>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp       New Password: </b><input type="password" name="newpass"><br><br>
-			<b>Confirm New Password: </b><input type="password" name="newpassconf">
-			<br><br>
-			<b>&nbsp &nbsp &nbsp &nbsp &nbsp Current Password: </b><input type="password" name="oldpass">
-			<br>
-			<input type="hidden" name="page" value="accountsettings">
-			<input type="submit" value="Submit">
-			</form>
-			<br><br>
-
-		</div>
-
-		<input type="submit" value="Delete Account" onclick="display('deleteaccount')"></input>
-
-		<div id="deleteaccount" style="display:none">
-			<br>
-			<b>Are you sure?</b><input type="submit" value="Yes" onclick="display('reallydeleteaccount')">
-			<br>
-			<div id="reallydeleteaccount" style="display:none">
-				<b>Enter Password</b>
-				<form action="" method="post">
-				<input type="password" name="deletepass"><br>
+				<form action="" method="get">
+				<input type="text" name="newemail"></input><input type="submit" value="Submit"></input>
 				<input type="hidden" name="page" value="accountsettings">
-				<input type="submit" value="Confirm">
 				</form>
+				<br>
+
+			</div>
+
+			<input type="submit" value="Notification Preferences" onclick="display('notificpref')"></input><br><br>
+
+			<div id="notificpref" style="display:none">
+				<form action="">
+				<input type="radio" name="notific-pref" value="onsite" <?php if($pref==0) echo "checked=\"true\""?>>On-Site Only<br>
+				<input type="radio" name="notific-pref" value="email" <?php if($pref==1) echo "checked=\"true\""?>>Email + On-site
+				<br>
+				<input type="hidden" name="page" value="accountsettings">
+				<input type="submit" value="Submit">
+				</form>
+				<br>
+			</div>
+
+			<input type="submit" value="Change Password" onclick="display('passwordchange')"></input><br><br>
+
+			<div id="passwordchange" style="display:none">
+
+				<form action="" method="post">
+				<b>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp       New Password: </b><input type="password" name="newpass"><br><br>
+				<b>Confirm New Password: </b><input type="password" name="newpassconf">
+				<br><br>
+				<b>&nbsp &nbsp &nbsp &nbsp &nbsp Current Password: </b><input type="password" name="oldpass">
+				<br>
+				<input type="hidden" name="page" value="accountsettings">
+				<input type="submit" value="Submit">
+				</form>
+				<br><br>
+
+			</div>
+
+			<input type="submit" value="Delete Account" onclick="display('deleteaccount')"></input>
+
+			<div id="deleteaccount" style="display:none">
+				<br>
+				<b>Are you sure?</b><input type="submit" value="Yes" onclick="display('reallydeleteaccount')">
+				<br>
+				<div id="reallydeleteaccount" style="display:none">
+					<b>Enter Password</b>
+					<form action="" method="post">
+					<input type="password" name="deletepass"><br>
+					<input type="hidden" name="page" value="accountsettings">
+					<input type="submit" value="Confirm">
+					</form>
+				</div>
 			</div>
 		</div>
-
 
 			<?php
 			};
 			if(isset($_SESSION['username']))
 			{
-			echo "<hr><h2>Wishlist:</h2>";
 			?>
+				<hr>
+				<div class="well">
+					<h2>WishList</h2>
+					<div class="well well-small">
 						<table border="0">
 							<tr>
 
@@ -219,25 +223,25 @@
 								$collection = $mdb->selectCollection("wishlist");
 								$cursor = $collection->find();
 								foreach($cursor as $doc)
-									{
+								{
 									if($doc['uid'] == $usrid)
 									{
-									$gid = $doc['gid'];
-									$quer = "SELECT name, image from game_table WHERE id = \"$gid\"";
-									$res2 = $db->send_sql($quer);
-									$dat = mysql_fetch_assoc($res2);
-									$img = $dat['image'];
-									echo "<td><img src=\"$img\"></img></td>";
+										$gid = $doc['gid'];
+										$quer = "SELECT name, image from game_table WHERE id = \"$gid\"";
+										$res2 = $db->send_sql($quer);
+										$dat = mysql_fetch_assoc($res2);
+										$img = $dat['image'];
+										echo "<td><img src=\"$img\"></img></td>";
 									}
-									}
-
+								}
 								?>
 
 							</tr>
-			</table>
+						</table>
+					</div>
+				</div>
 			<?php
 			}
-
 			?>
 
 		</div>

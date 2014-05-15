@@ -41,7 +41,7 @@
 
     
 	<section id="parent_opts">
-		<div class="jumbotron" style="background-color: rgb(105, 200, 243);">
+		<div class="well well-small" style="background-color: rgb(105, 200, 243);">
 			<h2>Browse games by Platform, Genre or both! </h2>
 		</div>
 		<ul>
