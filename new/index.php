@@ -11,17 +11,16 @@ $mdb = $m->sidestall;
 <html ng-app="plunker">
 
 <head>
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap.slate.min.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="style/sidestall3.css" rel="stylesheet">
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    
-    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
-    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
-       <script src="javascript/carousel.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-	<link href="bootstrap/css/bootstrap-slate.css" rel="stylesheet">
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <!--script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script-->
+    <script src="javascript/carousel.js"></script>
 </head>
 
 <body>
