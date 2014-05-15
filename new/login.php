@@ -64,7 +64,7 @@
 	</div>
 	
 	<div class="container">
-		<div class="well well-small">
+		<div class="well well-small" style="background-color: rgb(105, 200, 243);">
 			<form class="form-signin" method="post" action="?page=login&log=true">
 				<h2 class="form-signin-heading">Please sign in!</h2>
 				<input type="text" class="input-block-level" name="username" placeholder="Username">

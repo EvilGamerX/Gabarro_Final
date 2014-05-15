@@ -18,7 +18,7 @@ $mdb = $m->sidestall;
     <script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body style="background: rgb(94, 94, 94);">
 
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container-fluid">
