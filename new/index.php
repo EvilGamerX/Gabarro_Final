@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
 <?php
-session_start();
+/*session_start();
 include("functions/db_class.php");
 $db = new database();
 $db->setup("mgrinthal", "mattdamon", "localhost", "sidestall");
 //$lkid = connect();
 $m = new MongoClient();
-$mdb = $m->sidestall;
+$mdb = $m->sidestall;*/
 ?>
 <html ng-app="plunker">
 
@@ -19,7 +19,7 @@ $mdb = $m->sidestall;
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
-    <!--<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>-->
+    <!--script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script-->
     <script src="javascript/carousel.js"></script>
 </head>
 

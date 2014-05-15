@@ -59,46 +59,44 @@
 	{
 ?>
 	<div id="page_data" align="center">
-	<div class="well" style="background-color: rgb(105, 200, 243);">
+	<div class="well">
 			<h2>Welcome to Side Stall!</h2>
 	</div>
 	
-	<div class="container">
-		<div class="well well-small" style="background-color: rgb(105, 200, 243);">
-			<form class="form-signin" method="post" action="?page=login&log=true">
-				<h2 class="form-signin-heading">Please sign in!</h2>
-				<input type="text" class="input-block-level" name="username" placeholder="Username">
-				<input type="password" class="input-block-level" name="pass" placeholder="Password"><br/>
-				<?php if(isset($_GET['log']) && $goodlogin == 0) echo "<font color=\"red\">Incorrect Username or Password</font><br>" ?>
-				<br>
-				<button class="btn btn-large btn-primary" type="submit">Sign in</button>
-			</form>
-			
-			<div id="signin-button" class="show">
-				<div class="g-signin"
-				data-callback="loginFinishedCallback"
-				data-approvalprompt="force"
-				data-clientid="315155486850-n914vts3enlr0d1clc0le9npa29aukpk.apps.googleusercontent.com"
-				data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read"
-				data-height="short"
-				data-cookiepolicy="single_host_origin"
-				>
-			</div>
-			
-			<br/>
-			
-			Don't have an account? <a href="?page=signup">Sign Up</a>
+	<div class="well well-small">
+		<form class="form-signin" method="post" action="?page=login&log=true">
+			<h2 class="form-signin-heading">Please sign in!</h2>
+			<input type="text" class="input-block-level" name="username" placeholder="Username">
+			<input type="password" class="input-block-level" name="pass" placeholder="Password"><br/>
+			<?php if(isset($_GET['log']) && $goodlogin == 0) echo "<font color=\"red\">Incorrect Username or Password</font><br>" ?>
+			<br>
+			<button class="btn btn-large btn-primary" type="submit">Sign in</button>
+		</form>
+		
+		<div id="signin-button" class="show">
+			<div class="g-signin"
+			data-callback="loginFinishedCallback"
+			data-approvalprompt="force"
+			data-clientid="315155486850-n914vts3enlr0d1clc0le9npa29aukpk.apps.googleusercontent.com"
+			data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read"
+			data-height="short"
+			data-cookiepolicy="single_host_origin"
+			>
 		</div>
-		</div>
+		
+		<br/>
+		
+		Don't have an account? <a href="?page=signup">Sign Up</a>
+	</div>
+	</div>
 
-		<div id="profile" class="hide">
-		<div>
-		  <span id="pic"></span>
-		  <span id="name"></span>
-		</div>
+	<div id="profile" class="hide">
+	<div>
+	  <span id="pic"></span>
+	  <span id="name"></span>
+	</div>
 
-		<div id="email"></div>
-		</div>
+	<div id="email"></div>
 	</div>
 <?php
 	}

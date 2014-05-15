@@ -1,43 +1,84 @@
 <article id="browse_page" >
     
- <div class="carousel slide" id="myCarousel" data-ride="carousel" height="300px">
-                <ol class="carousel-indicators">
-                        <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
-                        <li data-slide-to="1" data-target="#myCarousel" class=""></li>
-                        <li data-slide-to="2" data-target="#myCarousel" class=""></li>
-                </ol>
-                <div class="carousel-inner">
-                        <div class="item active">
- 
-                          <img alt="Titanfall XbOne" src="http://3beardsgaming.com/wp-content/uploads/2014/03/titanfall-banner-slice.jpg">
-                          <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
-                                <h4>Titanfall Xbox One</h4>
-                                <p><strong>$57.44</strong></p>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <img alt="Sims 3 PC" src="http://www.3nter.nl/wp-content/uploads/2013/07/sonic-lost-world-banner.jpg">
-                          <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
-                                <h4>Sonic: Lost World WiiU</h4>
-                                <p><strong>$26.31</strong></p>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <img alt="PKMN Y 3DS" src="http://images.nintendolife.com/news/2013/12/feature_12_days_of_christmas_pokemon_x_and_y_and_the_2ds_perfect_together/large.jpg">
-                          <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
-                                <h4>Pokemon Y 3DS</h4>
-                                <p><strong>$49.49</strong></p>
-                          </div>
-                        </div>
-                </div>
- 
-                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        </a>
-                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                        </a>
-        </div>
+    <div class="carousel slide" id="myCarousel" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+			<li data-slide-to="1" data-target="#myCarousel" class=""></li>
+			<li data-slide-to="2" data-target="#myCarousel" class=""></li>
+			<li data-slide-to="3" data-target="#myCarousel" class=""></li>
+			<li data-slide-to="4" data-target="#myCarousel" class=""></li>
+			<li data-slide-to="5" data-target="#myCarousel" class=""></li>
+			<li data-slide-to="6" data-target="#myCarousel" class=""></li>
+			<li data-slide-to="7" data-target="#myCarousel" class=""></li>
+			<li data-slide-to="8" data-target="#myCarousel" class=""></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="item active">
+
+			  <img alt="Titanfall XbOne" src="http://3.bp.blogspot.com/-wSj90eVZ1O8/UksNDHe-PKI/AAAAAAAAAA8/6d1Jk21ydW0/s1600/titanfall-hd-wallpaper2112.jpg" width="100%">
+			  <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
+				<h4>Titanfall Xbox One</h4>
+				<p><strong>$57.44</strong></p>
+			  </div>
+			</div>
+			<div class="item">
+			  <img alt="PKMN B2/W2 3DS" src="http://tecnoslave.com/wp-content/uploads/2012/05/pokemonblackwhite2banner.jpg" width="100%">
+			  <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
+				<h4>Pokemon Black 2/White 2 3DS</h4>
+				<p><strong>$49.49</strong></p>
+			  </div>
+			</div>
+			<div class="item">
+			  <img alt="Battlefield 3" src="http://img255.imageshack.us/img255/6214/battlefield3s.jpg" width="100%">
+			  <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
+				<h4>Battlefield 3 PS3</h4>
+				<p><strong>$39.99</strong></p>
+			  </div>
+			</div>
+			<div class="item">
+			  <img alt="SWTOR" src="http://img3.wikia.nocookie.net/__cb20100423033129/starwars/images/1/10/WPTORtalk.png" width="100%">
+			  <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
+				<h4>Star Wars: The Old Republic PC</h4>
+				<p><strong>Free!</strong></p>
+			  </div>
+			</div>
+			<div class="item">
+			  <img alt="LEGO Batman 2" src="http://1.bp.blogspot.com/-tjVPUBkRV10/TxQrPGG4yCI/AAAAAAAAKLE/QveGN3tNBrA/s1600/legobatman2banner.jpg" width="100%">
+			  <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
+				<h4>LEGO Batman 2: DC Super Heroes Wii</h4>
+				<p><strong>$19.99</strong></p>
+			  </div>
+			</div>
+			<div class="item">
+			  <img alt="BioShock Infinite" src="http://pyramida.info/tv/bioshock.jpg" width="100%">
+			  <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;" width="100%">
+				<h4>BioShock Infinite PS4</h4>
+				<p><strong>$24.99</strong></p>
+			  </div>
+			</div>
+			<div class="item">
+			  <img alt="Saints Row IV" src="http://www.thepalaceofwisdom.co.uk/wp-content/uploads/2013/05/Saints-Row-IV-Header.png" width="100%">
+			  <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
+				<h4>Saints Row IV PC</h4>
+				<p><strong>$AMERICA</strong></p>
+			  </div>
+			</div>
+			<div class="item">
+			  <img alt="Halo 4" src="http://www.thesixthaxis.com/wp-content/uploads/2012/11/halo4end.jpeg" width="100%">
+			  <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
+				<h4>Halo 4 Xbox 360</h4>
+				<p><strong>$59.99</strong></p>
+			  </div>
+			</div>
+		</div>
+
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+	</div>
 
     <script>
 	/*$.post( "game_call.php", function( data ) {
