@@ -210,7 +210,7 @@ else echo "<center><h2>Why don't you try logging in first?</h2></center>";
 
 		echo
 		"<div id=\"forum_main\" class=\"main\">
-			<table class=\"table table-striped table-bordered\" style=\"background-color: rgb(105, 200, 243);\" border=\"1\" width=\"100%\" align=\"center\" cellpadding=\"5\" cellspacing=\"1\">";
+			<table class=\"table table-striped table-bordered\" border=\"1\" width=\"100%\" align=\"center\" cellpadding=\"5\" cellspacing=\"1\">";
 
 		foreach($cursor as $doc)
 		{
@@ -272,7 +272,7 @@ else echo "<center><h2>Why don't you try logging in first?</h2></center>";
 			$cursor = $collection->find();
 			echo
 				"<div id=\"forum_main\" class=\"main\">
-					<table class=\"table table-striped table-bordered\" style=\"background-color: rgb(105, 200, 243);\" border=\"1\" width=\"100%\" align=\"center\" cellpadding=\"5\" cellspacing=\"1\">";
+					<table class=\"table table-striped table-bordered\" border=\"1\" width=\"100%\" align=\"center\" cellpadding=\"5\" cellspacing=\"1\">";
 
 			foreach($cursor as $doc)
 			{

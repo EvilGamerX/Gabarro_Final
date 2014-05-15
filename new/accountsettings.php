@@ -125,7 +125,7 @@
 				//echo $pref;
 		?>
 		
-		<div class="well" style="background-color: rgb(105, 200, 243);">
+		<div class="well">
 
 			<b>Username: </b><?php echo $_SESSION['username']; ?>
 
@@ -210,7 +210,7 @@
 		{
 		?>
 			<hr>
-			<div class="well" style="background-color: rgb(105, 200, 243);">
+			<div class="well"">
 				<h2>WishList</h2>
 				<div class="well well-small">
 					<table border="0">
