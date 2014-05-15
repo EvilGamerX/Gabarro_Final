@@ -19,7 +19,7 @@ $mdb = $m->sidestall;
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
-    <!--script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script-->
+    <!--<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>-->
     <script src="javascript/carousel.js"></script>
 </head>
 
@@ -51,13 +51,12 @@ $mdb = $m->sidestall;
 					echo "<li><a href=\"?page=login\">Log In / Sign Up</a></li>"; ?>
 					</ul>
 
-				<form class="navbar-form navbar-left" id="search_bar" action="" method="get" role="search">
+				<!--form class="navbar-form navbar-left" id="search_bar" action="?page=browse" method="post" role="search">
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search" name="search">
-						<input type="hidden" name="page" value="browse">
+						<input type="text" class="form-control" placeholder="Search" name="searchBarData">
 					</div>
 					<button type="submit" class="btn btn-default">Submit</button>
-				</form>
+				</form-->
 				</div>
 			</div>
 		</nav>

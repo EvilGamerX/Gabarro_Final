@@ -1,153 +1,104 @@
 <article id="browse_page" >
     
-    <div class="carousel slide" id="myCarousel" data-ride="carousel">
-		<ol class="carousel-indicators">
-			<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
-			<li data-slide-to="1" data-target="#myCarousel" class=""></li>
-			<li data-slide-to="2" data-target="#myCarousel" class=""></li>
-		</ol>
-		<div class="carousel-inner">
-			<div class="item active">
+ <div class="carousel slide" id="myCarousel" data-ride="carousel" height="300px">
+                <ol class="carousel-indicators">
+                        <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+                        <li data-slide-to="1" data-target="#myCarousel" class=""></li>
+                        <li data-slide-to="2" data-target="#myCarousel" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                        <div class="item active">
+ 
+                          <img alt="Titanfall XbOne" src="http://3beardsgaming.com/wp-content/uploads/2014/03/titanfall-banner-slice.jpg">
+                          <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
+                                <h4>Titanfall Xbox One</h4>
+                                <p><strong>$57.44</strong></p>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <img alt="Sims 3 PC" src="http://www.3nter.nl/wp-content/uploads/2013/07/sonic-lost-world-banner.jpg">
+                          <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
+                                <h4>Sonic: Lost World WiiU</h4>
+                                <p><strong>$26.31</strong></p>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <img alt="PKMN Y 3DS" src="http://images.nintendolife.com/news/2013/12/feature_12_days_of_christmas_pokemon_x_and_y_and_the_2ds_perfect_together/large.jpg">
+                          <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
+                                <h4>Pokemon Y 3DS</h4>
+                                <p><strong>$49.49</strong></p>
+                          </div>
+                        </div>
+                </div>
+ 
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+        </div>
 
-			  <img alt="Titanfall XbOne" src="http://3beardsgaming.com/wp-content/uploads/2014/03/titanfall-banner-slice.jpg">
-			  <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
-				<h4>Titanfall Xbox One</h4>
-				<p><strong>$57.44</strong></p>
-			  </div>
-			</div>
-			<div class="item">
-			  <img alt="Sims 3 PC" src="http://img816.imageshack.us/img816/3420/76sims3banner759x190de.jpg">
-			  <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
-				<h4>Sims 3 PC</h4>
-				<p><strong>$26.31</strong></p>
-			  </div>
-			</div>
-			<div class="item">
-			  <img alt="PKMN Y 3DS" src="http://images.nintendolife.com/news/2013/12/feature_12_days_of_christmas_pokemon_x_and_y_and_the_2ds_perfect_together/large.jpg">
-			  <div class="carousel-caption" style="background-color:rgba(0, 0, 0, 0.2); border-radius:30px;">
-				<h4>Pokemon Y 3DS</h4>
-				<p><strong>$49.49</strong></p>
-			  </div>
-			</div>
-		</div>
-
-			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left"></span>
-			</a>
-			<a class="right carousel-control" href="#myCarousel" data-slide="next">
-			<span class="glyphicon glyphicon-chevron-right"></span>
-			</a>
-	</div>
-
-    
+    <script>
+	/*$.post( "game_call.php", function( data ) {
+		alert( data );
+});*/
+	</script>
 	<section id="parent_opts">
 		<div class="well well-small">
-			<h2>Browse games by Platform, Genre or both! </h2>
+			<h2>Browse games by platform! </h2>
 		</div>
-		<ul>
-		<li><button type="submit" class="btn btn-default btn-lg" value="Platform" onclick="display('platform_opts')">Platform</li>
-<!--			<li><input type="submit" value="Platform" onclick="display('platform_opts')"></li>
-			<li><input type="submit" value="Genre" onclick="display('genre_opts')"></li>
--->
-		</ul>
-		<br/>
-	</section>
-	<form action="?page=browse" method="post">
-		<section id="platform_opts" class="platform_radio_section" style="display:none">
-			<section class="radio_group">
-				<label for="pc">PC</label>
-				<input type="radio" name="platform_radios" id="pc" value="PC" required/>
-			</section>
-			<section class="radio_group">
-				<label for="ps4">Playstation 4</label>
-				<input type="radio" name="platform_radios" id="ps4" value="Playstation 4" required/>
-			</section>
-			<section class="radio_group">
-				<label for="xboxone">Xbox One</label>
-				<input type="radio" name="platform_radios" id="xboxone" value="Xbox One" required/>
-			</section>
-			<section class="radio_group">
-				<label for="ps3">Playstation 3</label>
-				<input type="radio" name="platform_radios" id="ps3" value="Playstation 3" required/>
-			</section>
-			<section class="radio_group">
-				<label for="xbox360">Xbox 360</label>
-				<input type="radio" name="platform_radios" id="xbox360" value="Xbox 360" required/>
-			</section>
-			<section class="radio_group">
-				<label for="wiiu">Wii U</label>
-				<input type="radio" name="platform_radios" id="wiiu" value="Wii U" required/>
-			</section>
-			<section class="radio_group">
-				<label for="wii">Wii</label>
-				<input type="radio" name="platform_radios" id="wii" value="Wii" required/>
-			</section>
-			<section class="radio_group">
-				<label for="ds">Nintendo DS</label>
-				<input type="radio" name="platform_radios" id="ds" value="Nintendo DS" required/>
-			</section>
-			<section class="radio_group">
-				<label for="3ds">Nintendo 3DS</label>
-				<input type="radio" name="platform_radios" id="3ds" value="Nintendo 3DS" required/>
-			</section>
-			<section class="radio_group">
-				<label for="psvita">Playstation Vita</label>
-				<input type="radio" name="platform_radios" id="psvita" value="Playstation Vita" required/>
-			</section>
-			<!--<section class="radio-group">
-			<div class="btn-group" data-toggle="buttons-radio">  
-				<button id="pc" type="button" data-toggle="button" name="platform_radios" value="PC" class="btn btn-primary">PC</button>
-				<button id="ps4" type="button" data-toggle="button" name="platform_radios" value="Playstation 4" class="btn btn-primary">Playstation 4</button>
+
+	<div ng-controller="CarouselDemoCtrl">
+		<label>Video Game Platforms</label>
+		<div class="form-group">
+			<label class="checkbox-inline">
+				<input type="checkbox" name="platform" ng-model="formData.platform.PC" ng-change="search();"> PC
+			</label>
+				<label class="checkbox-inline">
+				<input type="checkbox" name="platform" ng-model="formData.platform.PS4" ng-change="search();"> PS4
+			</label>
+			<label class="checkbox-inline">
+				<input type="checkbox" name="platform" ng-model="formData.platform.PS3" ng-change="search();"> PS3
+			</label>
+				<label class="checkbox-inline">
+				<input type="checkbox" name="platform" ng-model="formData.platform.xb1" ng-change="search();"> Xbox One
+			</label>
+				<label class="checkbox-inline">
+				<input type="checkbox" name="platform" ng-model="formData.platform.x360" ng-change="search();"> Xbox 360
+			</label>
+				<label class="checkbox-inline">
+				<input type="checkbox" name="platform" ng-model="formData.platform.WiiU" ng-change="search();"> WiiU
+			</label>
+				<label class="checkbox-inline">
+				<input type="checkbox" name="platform" ng-model="formData.platform.Wii" ng-change="search();"> Wii
+			</label>
+				<label class="checkbox-inline">
+				<input type="checkbox" name="platform" ng-model="formData.platform.3DS" ng-change="search();"> Nintendo 3DS
+			</label>
+				<label class="checkbox-inline">
+				<input type="checkbox" name="platform" ng-model="formData.platform.NDS" ng-change="search();"> Nintendo DS
+			</label>
+				<label class="checkbox-inline">
+				<input type="checkbox" name="platform" ng-model="formData.platform.PSV" ng-change="search();"> PS Vita
+			</label>
+				<label class="checkbox-inline">
+				<input type="checkbox" name="platform" ng-model="formData.platform.PSP" ng-change="search();"> PSP
+			</label>
+		</div>
+		<!--pre>{{formData}}</pre>
+		<pre>{{result}}</pre-->
+		<div class="row" style="margin-bottom:15px;" ng-repeat="row in result">
+			<div class="col-md-3 text-center" ng-repeat="col in row">
+				<a href="?page=game&gid={{col.gid}}"><img src="{{col.image}}" class="img-thumbnail" width="100%"></a>
 			</div>
-			</section>-->
-
-		</section>
-		
-
-
-		<br/>
-<!--		<section id="genre_opts" class="genre_radio_section" style="display:none">
-			<section class="radio_group">
-				<label for="fighting">Fighting</label>
-				<input type="radio" name="genre_radios" id="fighting" value="Fighting" required/>
-			</section>
-			<section class="radio_group">
-				<label for="puzzle">Puzzle</label>
-				<input type="radio" name="genre_radios" id="puzzle" value="Puzzle" required/>
-			</section>
-			<section class="radio_group">
-				<label for="racing">Racing</label>
-				<input type="radio" name="genre_radios" id="racing" value="Racing" required/>
-			</section>
-			<section class="radio_group">
-				<label for="rpg">RPG</label>
-				<input type="radio" name="genre_radios" id="rpg" value="RPG" required/>
-			</section>
-			<section class="radio_group">
-				<label for="shooting">Shooting</label>
-				<input type="radio" name="genre_radios" id="shooting" value="Shooting" required/>
-			</section>
-			<section class="radio_group">
-				<label for="simulation">Simulation</label>
-				<input type="radio" name="genre_radios" id="simulation" value="Simulation" required/>
-			</section>
-			<section class="radio_group">
-				<label for="sports">Sports</label>
-				<input type="radio" name="genre_radios" id="sports" value="Sports" required/>
-			</section>
-			<section class="radio_group">
-				<label for="strategy">Strategy</label>
-				<input type="radio" name="genre_radios" id="strategy" value="Strategy" required/>
-			</section>
-		</section>
--->
-		<button type="submit" name="results_submit" value="View Results" class="btn btn-lg" id="submit"><b>Submit</b></button>
-		<!--<input type="submit" name="results_submit" value="View Results">-->
-	</form>
+		</div>
+		<!--(_id, amazon, gid, img, name, platform)-->
+	</div>
 	<?php
 		// retrieve all games and then run comparisons to sort displayed results
-		$quer = "SELECT * FROM game_table";
-		$res = $db->send_sql($quer);
+		//$quer = "SELECT * FROM game_table";
+		//$res = $db->send_sql($quer);
 		$ret;
 		$ret2;
 		$collection = $mdb->selectCollection("game_table");
@@ -336,9 +287,8 @@
 		// if post and get wasn't set, assume they haven't selected everything and auto load all games to results
 		// build array of all games from db. Can be used as a sort of cache so when next page/prev page
 		// buttons are hit, they're already in script memory
-		else
-		{	
-			$counter = 0;
+		
+		/*	$counter = 0;
 			$cursor = $collection->find();
 			foreach($cursor as $doc)
 			{
@@ -346,7 +296,7 @@
 				$ret2[] = $doc;
 			}
 		/*while ($row = $db->next_row())
-				$ret[] = $row;*/
+				$ret[] = $row;
 		}
 
 		echo "<section id=\"game_results\">";
@@ -382,7 +332,7 @@
 		echo "</tbody>";
 		echo "</table>";
 		echo "</div>";
-		echo "</div>";
+		echo "</div>";*/
 ?>
 </article>
 

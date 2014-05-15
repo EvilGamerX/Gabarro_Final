@@ -234,7 +234,7 @@
 										if($doc2['gid'] == $gid)
 										{
 										$img = $doc2['image'];
-										echo "<td><img src=\"$img\"></img></td>";
+										echo "<td><img src=\"$img\" width= \"200px\"></img></td>";
 										}
 									}
 									//$quer = "SELECT name, image from game_table WHERE id = \"$gid\"";
