@@ -10,7 +10,6 @@
 			<li data-slide-to="5" data-target="#myCarousel" class=""></li>
 			<li data-slide-to="6" data-target="#myCarousel" class=""></li>
 			<li data-slide-to="7" data-target="#myCarousel" class=""></li>
-			<li data-slide-to="8" data-target="#myCarousel" class=""></li>
 		</ol>
 		<div class="carousel-inner">
 			<div class="item active">

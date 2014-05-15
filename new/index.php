@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
 <?php
-/*session_start();
+session_start();
 include("functions/db_class.php");
 $db = new database();
 $db->setup("mgrinthal", "mattdamon", "localhost", "sidestall");
 //$lkid = connect();
 $m = new MongoClient();
-$mdb = $m->sidestall;*/
+$mdb = $m->sidestall;
 ?>
 <html ng-app="plunker">
 
@@ -38,7 +38,7 @@ $mdb = $m->sidestall;*/
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				  <ul class="nav navbar-nav">
-					<li><a class="navbar-brand" href="#">Sidestall</a></li>
+					<li><a class="navbar-brand" href="?page=browse">Sidestall</a></li>
 					<li <?php if(isset($pg)) if($pg = "browse") echo "class='active'";?>><a href="?page=browse">Browse</a></li>
 					<li><a href="?page=forums">Forums</a></li>
 					<?php if (isset($_SESSION['username']))

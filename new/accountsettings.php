@@ -203,54 +203,51 @@
 					</form>
 				</div>
 			</div>
-
+		</div>
 		<?php
 		};
 		if(isset($_SESSION['username']))
 		{
 		?>
 			<hr>
-			<div class="well"">
+			<div class="well">
 				<h2>WishList</h2>
-				<div class="well well-small">
-					<table border="0">
-						<tr>
+				<table border="0">
+					<tr>
 
-							<?php
-							$usrid = $_SESSION['uid'];
-							//$quer = "SELECT gID FROM wishlist WHERE uID = \"$usrid\"";
-							//$res = $db->send_sql($quer);
-							$collection = $mdb->selectCollection("wishlist");
-							$cursor = $collection->find();
-							foreach($cursor as $doc)
+						<?php
+						$usrid = $_SESSION['uid'];
+						//$quer = "SELECT gID FROM wishlist WHERE uID = \"$usrid\"";
+						//$res = $db->send_sql($quer);
+						$collection = $mdb->selectCollection("wishlist");
+						$cursor = $collection->find();
+						foreach($cursor as $doc)
+						{
+							if($doc['uid'] == $usrid)
 							{
-								if($doc['uid'] == $usrid)
+								$gid = $doc['gid'];
+								$collection2 = $mdb->selectCollection("game_table");
+								$cursor2 = $collection2->find();
+								foreach($cursor2 as $doc2)
 								{
-									$gid = $doc['gid'];
-									$collection2 = $mdb->selectCollection("game_table");
-									$cursor2 = $collection2->find();
-									foreach($cursor2 as $doc2)
+									if($doc2['gid'] == $gid)
 									{
-										if($doc2['gid'] == $gid)
-										{
-										$img = $doc2['image'];
-										echo "<td><img src=\"$img\" width= \"200px\"></img></td>";
-										}
+									$img = $doc2['image'];
+									echo "<td><img src=\"$img\" width= \"200px\"></img></td>";
 									}
-									//$quer = "SELECT name, image from game_table WHERE id = \"$gid\"";
-									//$res2 = $db->send_sql($quer);
-									/*$dat = mysql_fetch_assoc($res2);
-									$img = $dat['image'];
-									echo "<td><img src=\"$img\"></img></td>";*/
 								}
+								//$quer = "SELECT name, image from game_table WHERE id = \"$gid\"";
+								//$res2 = $db->send_sql($quer);
+								/*$dat = mysql_fetch_assoc($res2);
+								$img = $dat['image'];
+								echo "<td><img src=\"$img\"></img></td>";*/
 							}
-							?>
+						}
+						?>
 
-						</tr>
-					</table>
-				</div>
+					</tr>
+				</table>
 			</div>
-		</div>
 		<?php
 		}
 		?>
