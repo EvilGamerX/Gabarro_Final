@@ -102,6 +102,57 @@
 			</section>-->
 
 		</section>
+        
+        
+        <div ng-controller="CarouselDemoCtrl">
+            <label>Favorite Colors</label>
+            <div class="form-group">
+            <label class="checkbox-inline">
+                <input type="checkbox" name="platform" ng-model="formData.platform.pc"> PC
+            </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" name="platform" ng-model="formData.platform.PS4"> PS4
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" name="platform" ng-model="formData.platform.PS3"> PS3
+            </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" name="platform" ng-model="formData.platform.XBO"> Xbox One
+            </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" name="platform" ng-model="formData.platform.360"> Xbox 360
+            </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" name="platform" ng-model="formData.platform.WiiU"> WiiU
+            </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" name="platform" ng-model="formData.platform.Wii"> Wii
+            </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" name="platform" ng-model="formData.platform.3DS"> Nintendo 3DS
+            </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" name="platform" ng-model="formData.platform.NDS"> Nintendo DS
+            </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" name="platform" ng-model="formData.platform.PSV"> PS Vita
+            </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" name="platform" ng-model="formData.platform.PSP"> PSP
+            </label>
+        </div>
+            
+            <pre>
+                {{ formData }}
+            </pre>
+            
+            <ul style="list-style-type: none;">
+                <li ng-repeat="item in formData.platform">
+                    {{item}}
+                </li>
+            </ul>
+        </div>
+    
 		
 
 
