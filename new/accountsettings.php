@@ -124,25 +124,26 @@
 					echo "<font color=\"red\">$message</font><br><br>";
 				//echo $pref;
 		?>
-
-		<b>Username: </b><?php echo $_SESSION['username']; ?>
-
-		<br><br>
-
-		<b>Email: </b><?php echo $_SESSION['email']; ?>
-
-		<br><br>
-
-		<?php
 		
-		if($_SESSION['access']==1)
-		{
-		?>
-		<a href="?page=admin">Administrator Page</a><br><br>
-		<?php
-		}
-		?>
 		<div class="well" style="background-color: rgb(105, 200, 243);">
+
+			<b>Username: </b><?php echo $_SESSION['username']; ?>
+
+			<br><br>
+
+			<b>Email: </b><?php echo $_SESSION['email']; ?>
+
+			<br><br>
+
+			<?php
+			if($_SESSION['access']==1)
+			{
+			?>
+			<a href="?page=admin">Administrator Page</a><br><br>
+			<?php
+			}
+			?>
+			
 			<input type="submit" value="Change Email Address" onclick="display('emailchange')"></input><br><br>
 
 			<div id="emailchange" style="display:none">
@@ -202,47 +203,47 @@
 					</form>
 				</div>
 			</div>
-		</div>
 
-			<?php
-			};
-			if(isset($_SESSION['username']))
-			{
-			?>
-				<hr>
-				<div class="well">
-					<h2>WishList</h2>
-					<div class="well well-small">
-						<table border="0">
-							<tr>
+		<?php
+		};
+		if(isset($_SESSION['username']))
+		{
+		?>
+			<hr>
+			<div class="well" style="background-color: rgb(105, 200, 243);">
+				<h2>WishList</h2>
+				<div class="well well-small">
+					<table border="0">
+						<tr>
 
-								<?php
-								$usrid = $_SESSION['uid'];
-								//$quer = "SELECT gID FROM wishlist WHERE uID = \"$usrid\"";
-								//$res = $db->send_sql($quer);
-								$collection = $mdb->selectCollection("wishlist");
-								$cursor = $collection->find();
-								foreach($cursor as $doc)
+							<?php
+							$usrid = $_SESSION['uid'];
+							//$quer = "SELECT gID FROM wishlist WHERE uID = \"$usrid\"";
+							//$res = $db->send_sql($quer);
+							$collection = $mdb->selectCollection("wishlist");
+							$cursor = $collection->find();
+							foreach($cursor as $doc)
+							{
+								if($doc['uid'] == $usrid)
 								{
-									if($doc['uid'] == $usrid)
-									{
-										$gid = $doc['gid'];
-										$quer = "SELECT name, image from game_table WHERE id = \"$gid\"";
-										$res2 = $db->send_sql($quer);
-										$dat = mysql_fetch_assoc($res2);
-										$img = $dat['image'];
-										echo "<td><img src=\"$img\"></img></td>";
-									}
+									$gid = $doc['gid'];
+									$quer = "SELECT name, image from game_table WHERE id = \"$gid\"";
+									$res2 = $db->send_sql($quer);
+									$dat = mysql_fetch_assoc($res2);
+									$img = $dat['image'];
+									echo "<td><img src=\"$img\"></img></td>";
 								}
-								?>
+							}
+							?>
 
-							</tr>
-						</table>
-					</div>
+						</tr>
+					</table>
 				</div>
-			<?php
-			}
-			?>
+			</div>
+		</div>
+		<?php
+		}
+		?>
 
 		</div>
 
